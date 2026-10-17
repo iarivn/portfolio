@@ -29,7 +29,7 @@ h1,h2,h3{line-height:1.05;letter-spacing:-.01em}
 .micro.light{color:var(--cream)}
 /* nav */
 .nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:60;display:flex;align-items:center;gap:6px;
-  background:rgba(245,240,232,.92);border:2px solid var(--choc);border-radius:999px;padding:8px 10px 8px 20px;
+  background:var(--cream);border:2px solid var(--choc);border-radius:999px;padding:8px 10px 8px 20px;
   box-shadow:0 10px 30px -12px rgba(62,43,34,.35);max-width:calc(100vw - 24px)}
 .nav .brand{font-weight:900;font-size:.95rem;margin-right:8px;white-space:nowrap}
 .nav a.nl{text-decoration:none;color:var(--choc);font-weight:800;font-size:.85rem;padding:8px 14px;border-radius:999px;white-space:nowrap}
@@ -88,8 +88,6 @@ h1,h2,h3{line-height:1.05;letter-spacing:-.01em}
   display:flex;align-items:center;justify-content:space-between;gap:12px;position:relative;transform:rotate(-1.2deg);
   box-shadow:0 16px 34px -14px rgba(62,43,34,.5)}
 .ribbon .scriptword{color:var(--cream);font-size:1.7rem;transform:rotate(-2deg)}
-.ribbon .fold{position:absolute;right:-14px;top:50%;transform:translateY(-50%);width:0;height:0;
-  border-top:22px solid transparent;border-bottom:22px solid transparent;border-left:26px solid #2A1E17}
 .starburst-row{text-align:center;padding:26px 0;background:var(--cream);font-size:3rem;color:var(--pink);letter-spacing:.4em}
 /* sections */
 section{padding:70px 5vw}
@@ -135,7 +133,8 @@ section{padding:70px 5vw}
 .tile .tnum{font-size:.65rem;font-weight:900;color:var(--muted);letter-spacing:.1em}
 .tile .tname{font-weight:800;font-size:.82rem;line-height:1.35}
 .tile .timg{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:1.6rem;opacity:.16;font-weight:900}
-.case .ast.tl{position:absolute;top:-20px;left:-14px;z-index:2}
+.case .ast.tl{position:absolute;top:-12px;left:-8px;z-index:2}
+section{scroll-margin-top:84px}.case{scroll-margin-top:70px}
 .case .scriptword.seal{position:absolute;bottom:-24px;right:-8px;z-index:2;font-size:1.8rem;color:var(--choc);background:var(--cream);
   padding:4px 18px;border-radius:999px;border:2px solid var(--choc);transform:rotate(6deg)}
 .dark .case .scriptword.seal{color:var(--cream);background:var(--choc);border-color:var(--cream)}
@@ -222,10 +221,10 @@ footer{border-top:2px solid var(--line);padding:26px 5vw;display:flex;justify-co
     <div class="scatter hide-m" style="bottom:6%;right:8%">
       <div class="folder mini-folder"><span class="back"></span><span class="front"></span><span class="flabel">thumbnails</span></div>
     </div>
-    <div class="scatter hide-m" style="top:34%;left:2%">
+    <div class="scatter hide-m" style="top:44%;left:1%">
       <div class="filethumb"><div class="im">JPG</div><small>pirana_logo.png</small></div>
     </div>
-    <div class="scatter hide-m" style="bottom:14%;left:10%">
+    <div class="scatter hide-m" style="bottom:32%;left:5%"
       <div class="filethumb" style="transform:rotate(-4deg)"><div class="im" style="background:linear-gradient(135deg,#E84393,#a82c68)">MP4</div><small>reel_final.mp4</small></div>
     </div>
     <div class="scatter" style="bottom:2%;right:26%">
@@ -246,7 +245,7 @@ footer{border-top:2px solid var(--line);padding:26px 5vw;display:flex;justify-co
 </header>
 
 <div class="ribbon-wrap">
-  <div class="ribbon reveal"><span class="scriptword">selected work</span><span class="micro light">scroll for more ↓</span><span class="fold"></span></div>
+  <div class="ribbon reveal"><span class="scriptword">selected work</span><span class="micro light">scroll for more ↓</span></div>
 </div>
 
 <section id="about">
@@ -342,7 +341,7 @@ footer{border-top:2px solid var(--line);padding:26px 5vw;display:flex;justify-co
 </div>
 
 <div class="ribbon-wrap">
-  <div class="ribbon reveal"><span class="scriptword">logo &amp; identity</span><span class="micro light">more below ↓</span><span class="fold"></span></div>
+  <div class="ribbon reveal"><span class="scriptword">logo &amp; identity</span><span class="micro light">more below ↓</span></div>
 </div>
 
 <!-- project 3 : miross -->
@@ -357,7 +356,7 @@ footer{border-top:2px solid var(--line);padding:26px 5vw;display:flex;justify-co
       <p class="body">Just the logo — the rest of the brand's main website is not my design.</p>
     </div>
     <div class="reveal">
-      <div class="frame"><span class="fn" style="font-size:3rem;font-weight:900">M</span><span class="fn">miross · by arta</span><small>gothic monogram · diamond crown</small></div>
+      <div class="frame"><span class="fn" style="font-size:3.4rem;font-weight:900;font-family:Georgia,'Times New Roman',serif;letter-spacing:0">M</span><span class="fn">miross · by arta</span><small>gothic monogram · diamond crown</small></div>
     </div>
   </div>
 </div>
