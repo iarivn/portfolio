@@ -116,6 +116,15 @@ section{padding:110px 0}
   display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:44px 30px;text-align:center}
 .frame .fn{font-weight:700;font-size:1.05rem;letter-spacing:-.01em}
 .frame small{color:var(--muted);font-size:.85rem}
+.tile .im img{width:100%;height:100%;object-fit:cover}
+figure{margin:0}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:44px}
+.gallery figure{border:1px solid var(--line);background:var(--cream2);aspect-ratio:1528/1080;overflow:hidden}
+.gallery figure img{width:100%;height:100%;object-fit:cover}
+.gallery figure.contain img{object-fit:contain}
+@media(max-width:700px){.gallery{grid-template-columns:repeat(2,1fr)}}
+.frame.imgf{padding:0;min-height:0;overflow:hidden;display:block}
+.frame.imgf img{width:100%;height:auto}
 /* ---------- dark band ---------- */
 .dark{background:var(--carbon);color:#EDE8DB}
 .dark .label{color:#8FA9C4}
@@ -242,16 +251,16 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
         <div><b>Year</b>2025 – 2026</div>
       </div>
       <div class="tgrid">
-        <div class="tile"><div class="im">16 : 10</div><div class="cap">Traders' Duel<small>Finance channel</small></div></div>
-        <div class="tile"><div class="im">16 : 10</div><div class="cap">Jimny Garage<small>Automotive</small></div></div>
-        <div class="tile"><div class="im">16 : 10</div><div class="cap">Persepolis Analysis<small>Sport</small></div></div>
-        <div class="tile"><div class="im">16 : 10</div><div class="cap">Jungle Adventure<small>Lifestyle</small></div></div>
-        <div class="tile"><div class="im">16 : 10</div><div class="cap">Mac mini M4 Review<small>Tech</small></div></div>
-        <div class="tile"><div class="im">16 : 10</div><div class="cap">Claude 0 → 100<small>Tech / AI</small></div></div>
-        <div class="tile"><div class="im">16 : 10</div><div class="cap">Podcast · مارکت ایران<small>Podcast</small></div></div>
-        <div class="tile"><div class="im">16 : 10</div><div class="cap">Car Gallery<small>Supercars</small></div></div>
-        <div class="tile"><div class="im">16 : 10</div><div class="cap">Vlog · ولوگ تولد<small>Lifestyle</small></div></div>
-        <div class="tile"><div class="im">16 : 10</div><div class="cap">Apple ID Fix<small>Tech</small></div></div>
+        <div class="tile"><div class="im"><img src="images/thumb-traders.jpg" alt="Traders' Duel — YouTube thumbnail design" loading="lazy"></div><div class="cap">Traders' Duel<small>Finance channel</small></div></div>
+        <div class="tile"><div class="im"><img src="images/thumb-jimny.jpg" alt="Jimny Garage — YouTube thumbnail design" loading="lazy"></div><div class="cap">Jimny Garage<small>Automotive</small></div></div>
+        <div class="tile"><div class="im"><img src="images/thumb-persepolis.jpg" alt="Persepolis Analysis — YouTube thumbnail design" loading="lazy"></div><div class="cap">Persepolis Analysis<small>Sport</small></div></div>
+        <div class="tile"><div class="im"><img src="images/thumb-jungle.jpg" alt="Jungle Adventure — YouTube thumbnail design" loading="lazy"></div><div class="cap">Jungle Adventure<small>Lifestyle</small></div></div>
+        <div class="tile"><div class="im"><img src="images/thumb-macmini.jpg" alt="Mac mini M4 Review — YouTube thumbnail design" loading="lazy"></div><div class="cap">Mac mini M4 Review<small>Tech</small></div></div>
+        <div class="tile"><div class="im"><img src="images/thumb-claude.jpg" alt="Claude 0 → 100 — YouTube thumbnail design" loading="lazy"></div><div class="cap">Claude 0 → 100<small>Tech / AI</small></div></div>
+        <div class="tile"><div class="im"><img src="images/thumb-podcast.jpg" alt="Podcast · مارکت ایران — YouTube thumbnail design" loading="lazy"></div><div class="cap">Podcast · مارکت ایران<small>Podcast</small></div></div>
+        <div class="tile"><div class="im"><img src="images/thumb-cargallery.jpg" alt="Car Gallery — YouTube thumbnail design" loading="lazy"></div><div class="cap">Car Gallery<small>Supercars</small></div></div>
+        <div class="tile"><div class="im"><img src="images/thumb-vlog.jpg" alt="Vlog · ولوگ تولد — YouTube thumbnail design" loading="lazy"></div><div class="cap">Vlog · ولوگ تولد<small>Lifestyle</small></div></div>
+        <div class="tile"><div class="im"><img src="images/thumb-appleid.jpg" alt="Apple ID Fix — YouTube thumbnail design" loading="lazy"></div><div class="cap">Apple ID Fix<small>Tech</small></div></div>
       </div>
     </article>
 
@@ -271,7 +280,14 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
         <div class="swatch"><div class="c" style="background:#C9A15F"></div><div class="n">Ochre<small>Wood · packaging</small></div></div>
         <div class="swatch"><div class="c" style="background:#2E2E2E"></div><div class="n">Charcoal<small>Typography · metals</small></div></div>
       </div>
-      <div class="frame"><span class="fn">Icons · Packaging · Print</span><small>28 line icons · takeaway cups &amp; boxes · cards &amp; brochures</small></div>
+      <div class="gallery">
+        <figure><img src="images/pirana-cards.jpg" alt="Pirana — business cards" loading="lazy"></figure>
+        <figure><img src="images/pirana-cups.jpg" alt="Pirana — takeaway cups" loading="lazy"></figure>
+        <figure><img src="images/pirana-boxes.jpg" alt="Pirana — takeaway boxes" loading="lazy"></figure>
+        <figure><img src="images/pirana-brochure.jpg" alt="Pirana — tri-fold brochure" loading="lazy"></figure>
+        <figure><img src="images/pirana-stickers.jpg" alt="Pirana — stickers" loading="lazy"></figure>
+        <figure class="contain"><img src="images/pirana-icons.webp" alt="Pirana — 28 line icons" loading="lazy"></figure>
+      </div>
     </article>
   </div>
 
@@ -287,7 +303,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
           <div><b>Deliverables</b>Monogram · lockup</div>
           <div><b>Year</b>2025</div>
         </div>
-        <div class="frame"><span class="fn" style="font-size:2.6rem;letter-spacing:.06em">M</span><small>Miross · by Arta — gothic monogram</small></div>
+        <div class="frame imgf"><img src="images/miross.jpg" alt="Miross by Arta — white gothic M monogram with diamond on dark cinematic close-up"></div>
       </article>
     </div>
   </div>
@@ -303,7 +319,13 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
         <div><b>Deliverables</b>Logo · construction · stationery</div>
         <div><b>Year</b>2025</div>
       </div>
-      <div class="frame"><span class="fn">Logo Construction</span><small>On dark · structure · concept board</small></div>
+      <div class="gallery">
+        <figure><img src="images/health-dark.jpg" alt="Health Ministry identity — logo on dark" loading="lazy"></figure>
+        <figure><img src="images/health-structure.jpg" alt="Health Ministry identity — logo construction" loading="lazy"></figure>
+        <figure><img src="images/health-concept.jpg" alt="Health Ministry identity — concept board" loading="lazy"></figure>
+        <figure><img src="images/health-tape.jpg" alt="Health Ministry identity — packaging tape" loading="lazy"></figure>
+        <figure><img src="images/health-stationery.jpg" alt="Health Ministry identity — stationery" loading="lazy"></figure>
+      </div>
     </article>
   </div>
 </section>
