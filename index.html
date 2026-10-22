@@ -172,35 +172,52 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
   .about-grid{gap:36px}
 }
 @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+/* ---------- language switch ---------- */
+.lang-switch{display:inline-flex;align-items:stretch;border:1px solid rgba(10,26,46,.3);background:rgba(255,255,255,.4);
+  -webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%);cursor:pointer;padding:0;border-radius:0;flex:none}
+.lang-switch .ls-opt{display:flex;align-items:center;padding:9px 13px;font-size:.8rem;font-weight:600;color:var(--muted);transition:background .2s,color .2s;line-height:1.2}
+.lang-switch .ls-opt.on{background:var(--carbon);color:var(--cream)}
+.lang-switch .ls-fa{font-family:'AbarHigh',var(--sf);font-size:.88rem}
+/* ---------- RTL / Persian mode ---------- */
+html[dir="rtl"] body{font-family:'AbarHigh',var(--sf);line-height:1.9}
+html[dir="rtl"] .btn,html[dir="rtl"] .nav .brand,html[dir="rtl"] .lang-switch{font-family:'AbarHigh',var(--sf)}
+html[dir="rtl"] h1,html[dir="rtl"] h2,html[dir="rtl"] h3{letter-spacing:-.01em}
+html[dir="rtl"] .label,html[dir="rtl"] .p-num,html[dir="rtl"] .fact h4,html[dir="rtl"] .p-meta b,html[dir="rtl"] .nav .brand{letter-spacing:0}
+html[dir="rtl"] .hero-meta div{padding:18px 0 4px 34px;margin-right:0;margin-left:34px}
+html[dir="rtl"] .fact{padding:22px 0 6px 26px}
+html[dir="rtl"] .stat{padding:30px 0 10px 20px}
+@media(max-width:700px){html[dir="rtl"] .hero-meta div{padding:14px 0 2px 20px;margin-left:20px}}
 </style>
 </head>
 <body>
 
 <nav class="nav">
   <div class="nav-in">
-    <a class="brand" href="#top">Arian Babaee</a>
+    <a class="brand" href="#top" data-i18n="navBrand">Arian Babaee</a>
     <div class="links">
-      <a class="nl" href="#work">Work</a>
-      <a class="nl" href="#about">About</a>
-      <a class="nl" href="#contact">Contact</a>
-      <a class="btn btn-sm" href="#contact">Let's talk</a>
+      <a class="nl" href="#work" data-i18n="navWork">Work</a>
+      <a class="nl" href="#about" data-i18n="navAbout">About</a>
+      <a class="nl" href="#contact" data-i18n="navContact">Contact</a>
+      <button class="lang-switch" id="langSwitch" type="button" aria-label="Language / زبان"><span class="ls-opt on" data-l="en">EN</span><span class="ls-opt ls-fa" data-l="fa">فا</span></button>
+      <a class="btn btn-sm" href="#contact" data-i18n="navTalk">Let's talk</a>
     </div>
   </div>
 </nav>
 
 <header class="hero" id="top">
   <div class="wrap">
-    <span class="label reveal">Portfolio — 2026</span>
-    <h1 class="reveal">Arian Babaee</h1>
-    <p class="sub reveal">Graphic designer &amp; video editor crafting brand identities, thumbnails and visuals with precision and care.</p>
+    <span class="label reveal" data-i18n="heroLabel">Portfolio — 2026</span>
+    <h1 class="reveal" data-i18n="heroName">Arian Babaee</h1>
+    <p class="sub reveal" data-i18n="heroSub">Graphic designer &amp; video editor crafting brand identities, thumbnails and visuals with precision and care.</p>
     <div class="hero-cta reveal">
-      <a class="btn" href="#work">View work</a>
-      <a class="btn btn-ghost" href="#contact">Get in touch</a>
+      <a class="btn" href="#work" data-i18n="heroCtaWork">View work</a>
+      <a class="btn btn-ghost" href="#contact" data-i18n="heroCtaContact">Get in touch</a>
     </div>
     <div class="hero-meta reveal">
-      <div><b>5+ years</b><span>Experience</span></div>
-      <div><b>Ps · Ai · Fc</b><span>Core tools</span></div>
-      <div><b>Available</b><span>For new projects</span></div>
+      <div><b data-i18n="heroMeta1b">5+ years</b><span data-i18n="heroMeta1s">Experience</span></div>
+      <div><b>Ps · Ai · Fc</b><span data-i18n="heroMeta2s">Core tools</span></div>
+      <div><b data-i18n="heroMeta3b">Available</b><span data-i18n="heroMeta3s">For new projects</span></div>
     </div>
   </div>
 </header>
@@ -208,25 +225,25 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
 <section id="about">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="label">About</span>
-      <h2>Designer, editor,<br>visual problem-solver.</h2>
+      <span class="label" data-i18n="aboutLabel">About</span>
+      <h2 data-i18n="aboutH2">Designer, editor,<br>visual problem-solver.</h2>
     </div>
     <div class="about-grid">
       <div class="portrait reveal"><span>AB</span></div>
       <div class="reveal">
-        <p style="font-size:1.08rem;max-width:36rem">I'm <b>Arian Babaee</b> — a graphic designer &amp; video editor with 5+ years of experience. I work with <b>Photoshop, Final Cut &amp; Illustrator</b>, and I love bringing visual ideas to life with AI. I've explored UI design, music composition and more — always open to trying something new.</p>
+        <p style="font-size:1.08rem;max-width:36rem" data-i18n="aboutPara">I'm <b>Arian Babaee</b> — a graphic designer &amp; video editor with 5+ years of experience. I work with <b>Photoshop, Final Cut &amp; Illustrator</b>, and I love bringing visual ideas to life with AI. I've explored UI design, music composition and more — always open to trying something new.</p>
         <ul class="svc">
-          <li>Brand Identity <i>Logos &amp; systems</i></li>
-          <li>YouTube Thumbnails <i>High-click design</i></li>
-          <li>Video Editing <i>Final Cut Pro</i></li>
-          <li>Social Media Design <i>Feeds &amp; campaigns</i></li>
-          <li>Packaging <i>Print-ready</i></li>
-          <li>Logo Design <i>Marks &amp; monograms</i></li>
+          <li data-i18n="svc1">Brand Identity <i>Logos &amp; systems</i></li>
+          <li data-i18n="svc2">YouTube Thumbnails <i>High-click design</i></li>
+          <li data-i18n="svc3">Video Editing <i>Final Cut Pro</i></li>
+          <li data-i18n="svc4">Social Media Design <i>Feeds &amp; campaigns</i></li>
+          <li data-i18n="svc5">Packaging <i>Print-ready</i></li>
+          <li data-i18n="svc6">Logo Design <i>Marks &amp; monograms</i></li>
         </ul>
         <div class="facts">
-          <div class="fact"><h4>Experience</h4><p>5+ years across branding, social &amp; video</p></div>
-          <div class="fact"><h4>Tools</h4><p>Photoshop · Illustrator · Final Cut · AI</p></div>
-          <div class="fact"><h4>Status</h4><p>Available for new projects</p></div>
+          <div class="fact"><h4 data-i18n="fact1h">Experience</h4><p data-i18n="fact1p">5+ years across branding, social &amp; video</p></div>
+          <div class="fact"><h4 data-i18n="fact2h">Tools</h4><p data-i18n="fact2p">Photoshop · Illustrator · Final Cut · AI</p></div>
+          <div class="fact"><h4 data-i18n="fact3h">Status</h4><p data-i18n="fact3p">Available for new projects</p></div>
         </div>
       </div>
     </div>
@@ -235,50 +252,50 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
 <section id="work" style="padding-top:40px">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="label">Selected work</span>
-      <h2>Projects</h2>
-      <p>A selection of recent work across branding, social and visual design.</p>
+      <span class="label" data-i18n="workLabel">Selected work</span>
+      <h2 data-i18n="workH2">Projects</h2>
+      <p data-i18n="workP">A selection of recent work across branding, social and visual design.</p>
     </div>
 
     <!-- 01 thumbnails -->
     <article class="project reveal">
       <span class="p-num">01</span>
-      <h3 class="p-title">YouTube Thumbnails</h3>
-      <p class="p-desc">A series of high-click thumbnails for Persian creators — bold compositions, expressive subjects and typography built to stop the scroll. A consistent, punchy visual language across <b>tech, sport, podcast and lifestyle</b> channels.</p>
+      <h3 class="p-title" data-i18n="p1Title">YouTube Thumbnails</h3>
+      <p class="p-desc" data-i18n="p1Desc">A series of high-click thumbnails for Persian creators — bold compositions, expressive subjects and typography built to stop the scroll. A consistent, punchy visual language across <b>tech, sport, podcast and lifestyle</b> channels.</p>
       <div class="p-meta">
-        <div><b>Scope</b>Social media design</div>
-        <div><b>Deliverables</b>10 thumbnails</div>
-        <div><b>Year</b>2025 – 2026</div>
+        <div data-i18n="p1MetaScope"><b>Scope</b>Social media design</div>
+        <div data-i18n="p1MetaDeliv"><b>Deliverables</b>10 thumbnails</div>
+        <div data-i18n="p1MetaYear"><b>Year</b>2025 – 2026</div>
       </div>
       <div class="tgrid">
-        <div class="tile"><div class="im"><img src="images/thumb-traders.jpg" alt="Traders' Duel — YouTube thumbnail design" loading="lazy"></div><div class="cap">Traders' Duel<small>Finance channel</small></div></div>
-        <div class="tile"><div class="im"><img src="images/thumb-jimny.jpg" alt="Jimny Garage — YouTube thumbnail design" loading="lazy"></div><div class="cap">Jimny Garage<small>Automotive</small></div></div>
-        <div class="tile"><div class="im"><img src="images/thumb-persepolis.jpg" alt="Persepolis Analysis — YouTube thumbnail design" loading="lazy"></div><div class="cap">Persepolis Analysis<small>Sport</small></div></div>
-        <div class="tile"><div class="im"><img src="images/thumb-jungle.jpg" alt="Jungle Adventure — YouTube thumbnail design" loading="lazy"></div><div class="cap">Jungle Adventure<small>Lifestyle</small></div></div>
-        <div class="tile"><div class="im"><img src="images/thumb-macmini.jpg" alt="Mac mini M4 Review — YouTube thumbnail design" loading="lazy"></div><div class="cap">Mac mini M4 Review<small>Tech</small></div></div>
-        <div class="tile"><div class="im"><img src="images/thumb-claude.jpg" alt="Claude 0 → 100 — YouTube thumbnail design" loading="lazy"></div><div class="cap">Claude 0 → 100<small>Tech / AI</small></div></div>
-        <div class="tile"><div class="im"><img src="images/thumb-podcast.jpg" alt="Podcast · مارکت ایران — YouTube thumbnail design" loading="lazy"></div><div class="cap">Podcast · مارکت ایران<small>Podcast</small></div></div>
-        <div class="tile"><div class="im"><img src="images/thumb-cargallery.jpg" alt="Car Gallery — YouTube thumbnail design" loading="lazy"></div><div class="cap">Car Gallery<small>Supercars</small></div></div>
-        <div class="tile"><div class="im"><img src="images/thumb-vlog.jpg" alt="Vlog · ولوگ تولد — YouTube thumbnail design" loading="lazy"></div><div class="cap">Vlog · ولوگ تولد<small>Lifestyle</small></div></div>
-        <div class="tile"><div class="im"><img src="images/thumb-appleid.jpg" alt="Apple ID Fix — YouTube thumbnail design" loading="lazy"></div><div class="cap">Apple ID Fix<small>Tech</small></div></div>
+        <div class="tile"><div class="im"><img src="images/thumb-traders.jpg" alt="Traders' Duel — YouTube thumbnail design" loading="lazy"></div><div class="cap" data-i18n="t1">Traders' Duel<small>Finance channel</small></div></div>
+        <div class="tile"><div class="im"><img src="images/thumb-jimny.jpg" alt="Jimny Garage — YouTube thumbnail design" loading="lazy"></div><div class="cap" data-i18n="t2">Jimny Garage<small>Automotive</small></div></div>
+        <div class="tile"><div class="im"><img src="images/thumb-persepolis.jpg" alt="Persepolis Analysis — YouTube thumbnail design" loading="lazy"></div><div class="cap" data-i18n="t3">Persepolis Analysis<small>Sport</small></div></div>
+        <div class="tile"><div class="im"><img src="images/thumb-jungle.jpg" alt="Jungle Adventure — YouTube thumbnail design" loading="lazy"></div><div class="cap" data-i18n="t4">Jungle Adventure<small>Lifestyle</small></div></div>
+        <div class="tile"><div class="im"><img src="images/thumb-macmini.jpg" alt="Mac mini M4 Review — YouTube thumbnail design" loading="lazy"></div><div class="cap" data-i18n="t5">Mac mini M4 Review<small>Tech</small></div></div>
+        <div class="tile"><div class="im"><img src="images/thumb-claude.jpg" alt="Claude 0 → 100 — YouTube thumbnail design" loading="lazy"></div><div class="cap" data-i18n="t6">Claude 0 → 100<small>Tech / AI</small></div></div>
+        <div class="tile"><div class="im"><img src="images/thumb-podcast.jpg" alt="Podcast · مارکت ایران — YouTube thumbnail design" loading="lazy"></div><div class="cap" data-i18n="t7">Podcast · مارکت ایران<small>Podcast</small></div></div>
+        <div class="tile"><div class="im"><img src="images/thumb-cargallery.jpg" alt="Car Gallery — YouTube thumbnail design" loading="lazy"></div><div class="cap" data-i18n="t8">Car Gallery<small>Supercars</small></div></div>
+        <div class="tile"><div class="im"><img src="images/thumb-vlog.jpg" alt="Vlog · ولوگ تولد — YouTube thumbnail design" loading="lazy"></div><div class="cap" data-i18n="t9">Vlog · ولوگ تولد<small>Lifestyle</small></div></div>
+        <div class="tile"><div class="im"><img src="images/thumb-appleid.jpg" alt="Apple ID Fix — YouTube thumbnail design" loading="lazy"></div><div class="cap" data-i18n="t10">Apple ID Fix<small>Tech</small></div></div>
       </div>
     </article>
 
     <!-- 02 pirana -->
     <article class="project reveal">
       <span class="p-num">02</span>
-      <h3 class="p-title">Pirana Food</h3>
-      <p class="p-desc">Full brand identity for <b class="fa" dir="rtl">پیرانا</b> — a cafe &amp; fast-food brand with a Mediterranean, nautical, art-deco soul. The brand's character: a flamingo. The mark: a coral double-arch with a Persian wordmark. A complete system — <b>palette, icon set, packaging and print</b> — with a minimalist art-deco language running from business cards to takeaway boxes.</p>
+      <h3 class="p-title" data-i18n="p2Title">Pirana Food</h3>
+      <p class="p-desc" data-i18n="p2Desc">Full brand identity for <b class="fa" dir="rtl">پیرانا</b> — a cafe &amp; fast-food brand with a Mediterranean, nautical, art-deco soul. The brand's character: a flamingo. The mark: a coral double-arch with a Persian wordmark. A complete system — <b>palette, icon set, packaging and print</b> — with a minimalist art-deco language running from business cards to takeaway boxes.</p>
       <div class="p-meta">
-        <div><b>Scope</b>Brand identity</div>
-        <div><b>Deliverables</b>Logo · icons · packaging · print</div>
-        <div><b>Year</b>2025</div>
+        <div data-i18n="p2MetaScope"><b>Scope</b>Brand identity</div>
+        <div data-i18n="p2MetaDeliv"><b>Deliverables</b>Logo · icons · packaging · print</div>
+        <div data-i18n="p2MetaYear"><b>Year</b>2025</div>
       </div>
       <div class="swatches">
-        <div class="swatch"><div class="c" style="background:#1E4D3B"></div><div class="n">Deep Green<small>Backgrounds · plants · walls</small></div></div>
-        <div class="swatch"><div class="c" style="background:#E07856"></div><div class="n">Coral<small>Foregrounds · highlights</small></div></div>
-        <div class="swatch"><div class="c" style="background:#C9A15F"></div><div class="n">Ochre<small>Wood · packaging</small></div></div>
-        <div class="swatch"><div class="c" style="background:#2E2E2E"></div><div class="n">Charcoal<small>Typography · metals</small></div></div>
+        <div class="swatch"><div class="c" style="background:#1E4D3B"></div><div class="n" data-i18n="sw1">Deep Green<small>Backgrounds · plants · walls</small></div></div>
+        <div class="swatch"><div class="c" style="background:#E07856"></div><div class="n" data-i18n="sw2">Coral<small>Foregrounds · highlights</small></div></div>
+        <div class="swatch"><div class="c" style="background:#C9A15F"></div><div class="n" data-i18n="sw3">Ochre<small>Wood · packaging</small></div></div>
+        <div class="swatch"><div class="c" style="background:#2E2E2E"></div><div class="n" data-i18n="sw4">Charcoal<small>Typography · metals</small></div></div>
       </div>
       <div class="gallery">
         <figure><img src="images/pirana-cards.jpg" alt="Pirana — business cards" loading="lazy"></figure>
@@ -296,12 +313,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
     <div class="wrap">
       <article class="project reveal">
         <span class="p-num">03</span>
-        <h3 class="p-title">Miross</h3>
-        <p class="p-desc">Logo design for <b>Miross by Arta</b> — a white gothic "M" monogram crowned with a diamond, set against a dark cinematic close-up. <b>Just the logo</b> — the rest of the brand's main website is not my design.</p>
+        <h3 class="p-title" data-i18n="p3Title">Miross</h3>
+        <p class="p-desc" data-i18n="p3Desc">Logo design for <b>Miross by Arta</b> — a white gothic "M" monogram crowned with a diamond, set against a dark cinematic close-up. <b>Just the logo</b> — the rest of the brand's main website is not my design.</p>
         <div class="p-meta">
-          <div><b>Scope</b>Logo design</div>
-          <div><b>Deliverables</b>Monogram · lockup</div>
-          <div><b>Year</b>2025</div>
+          <div data-i18n="p3MetaScope"><b>Scope</b>Logo design</div>
+          <div data-i18n="p3MetaDeliv"><b>Deliverables</b>Monogram · lockup</div>
+          <div data-i18n="p3MetaYear"><b>Year</b>2025</div>
         </div>
         <div class="frame imgf"><img src="images/miross.jpg" alt="Miross by Arta — white gothic M monogram with diamond on dark cinematic close-up"></div>
       </article>
@@ -312,12 +329,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
     <!-- 04 health ministry -->
     <article class="project reveal">
       <span class="p-num">04</span>
-      <h3 class="p-title">Health Ministry</h3>
-      <p class="p-desc">Identity for the Deputy of Research &amp; Technology — Ministry of Health &amp; Medical Education. A tree of curved lines, engineered from <b>pure geometry</b>. Logo, construction system, packaging tape and stationery.</p>
+      <h3 class="p-title" data-i18n="p4Title">Health Ministry</h3>
+      <p class="p-desc" data-i18n="p4Desc">Identity for the Deputy of Research &amp; Technology — Ministry of Health &amp; Medical Education. A tree of curved lines, engineered from <b>pure geometry</b>. Logo, construction system, packaging tape and stationery.</p>
       <div class="p-meta">
-        <div><b>Scope</b>Logo &amp; identity system</div>
-        <div><b>Deliverables</b>Logo · construction · stationery</div>
-        <div><b>Year</b>2025</div>
+        <div data-i18n="p4MetaScope"><b>Scope</b>Logo &amp; identity system</div>
+        <div data-i18n="p4MetaDeliv"><b>Deliverables</b>Logo · construction · stationery</div>
+        <div data-i18n="p4MetaYear"><b>Year</b>2025</div>
       </div>
       <div class="gallery">
         <figure><img src="images/health-dark.jpg" alt="Health Ministry identity — logo on dark" loading="lazy"></figure>
@@ -333,34 +350,34 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
 <section style="padding-top:20px">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="label">Why me</span>
-      <h2>This is what your brand<br>can achieve with me.</h2>
+      <span class="label" data-i18n="whyLabel">Why me</span>
+      <h2 data-i18n="whyH2">This is what your brand<br>can achieve with me.</h2>
     </div>
     <div class="stats reveal">
-      <div class="stat"><b>35%</b><span>2000</span></div>
-      <div class="stat"><b>48%</b><span>2010</span></div>
-      <div class="stat"><b>62%</b><span>2020</span></div>
-      <div class="stat"><b>71%</b><span>2025</span></div>
+      <div class="stat"><b data-i18n="statB1">35%</b><span data-i18n="statS1">2000</span></div>
+      <div class="stat"><b data-i18n="statB2">48%</b><span data-i18n="statS2">2010</span></div>
+      <div class="stat"><b data-i18n="statB3">62%</b><span data-i18n="statS3">2020</span></div>
+      <div class="stat"><b data-i18n="statB4">71%</b><span data-i18n="statS4">2025</span></div>
     </div>
   </div>
 </section>
 <section class="contact" id="contact">
   <div class="wrap">
-    <span class="label reveal">Contact</span>
-    <h2 class="reveal">Let's work<br>together.</h2>
-    <p class="lead reveal">Available for new projects — brand identities, thumbnails, visuals.</p>
+    <span class="label reveal" data-i18n="contactLabel">Contact</span>
+    <h2 class="reveal" data-i18n="contactH2">Let's work<br>together.</h2>
+    <p class="lead reveal" data-i18n="contactLead">Available for new projects — brand identities, thumbnails, visuals.</p>
     <p class="reveal fa" dir="rtl" style="margin-top:34px;font-weight:700;color:#EDE8DB">تماس با من</p>
     <div class="c-actions">
       <a class="btn btn-light reveal" href="tel:+989912566164"><small class="fa" dir="rtl">روی تمام پلتفرم‌ها (حتی واتساپ)</small><span class="big">+98991-256-6164</span></a>
-      <a class="btn btn-light reveal" href="https://instagram.com/iarivn" target="_blank" rel="noopener"><small>on instagram</small><span class="big">@iarivn</span></a>
+      <a class="btn btn-light reveal" href="https://instagram.com/iarivn" target="_blank" rel="noopener"><small data-i18n="igSmall">on instagram</small><span class="big">@iarivn</span></a>
     </div>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <span>© 2026 Arian Babaee</span>
-    <span>Graphic Designer &amp; Video Editor</span>
+    <span data-i18n="footerCopy">© 2026 Arian Babaee</span>
+    <span data-i18n="footerRole">Graphic Designer &amp; Video Editor</span>
   </div>
 </footer>
 
@@ -369,6 +386,68 @@ const obs=new IntersectionObserver(es=>es.forEach(e=>{
   if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}
 }),{threshold:.1});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+/* ---------- i18n: EN default, FA switch ---------- */
+const FA = {
+navBrand:'آرین بابایی', navWork:'نمونه‌کارها', navAbout:'درباره من', navContact:'تماس', navTalk:'گفت‌وگو کنیم',
+heroLabel:'پورتفولیو — ۲۰۲۶', heroName:'آرین بابایی',
+heroSub:'طراح گرافیک و تدوین‌گر ویدیو — هویت بصری برند، تامبنیل و تصاویر را با دقت و وسواس می‌سازم.',
+heroCtaWork:'مشاهده نمونه‌کارها', heroCtaContact:'تماس با من',
+heroMeta1b:'۵+ سال', heroMeta1s:'تجربه', heroMeta2s:'ابزارهای اصلی', heroMeta3b:'در دسترس', heroMeta3s:'برای پروژه‌های جدید',
+aboutLabel:'درباره من', aboutH2:'طراح، تدوین‌گر،<br>حل‌کننده‌ی مسئله‌های بصری.',
+aboutPara:'من <b>آرین بابایی</b> هستم — طراح گرافیک و تدوین‌گر ویدیو با بیش از ۵ سال تجربه. با <b>فتوشاپ، فاینال‌کات و ایلاستریتور</b> کار می‌کنم و عاشق جان‌دادن به ایده‌های بصری با کمک هوش مصنوعی‌ام. طراحی رابط کاربری، ساخت موسیقی و چند حوزه‌ی دیگر را هم تجربه کرده‌ام — و همیشه برای تجربه‌های تازه آماده‌ام.',
+svc1:'هویت بصری برند <i>لوگو و سیستم‌های بصری</i>', svc2:'تامبنیل یوتیوب <i>طراحی پربازدید</i>', svc3:'تدوین ویدیو <i>فاینال‌کات پرو</i>',
+svc4:'طراحی شبکه‌های اجتماعی <i>فید و کمپین</i>', svc5:'بسته‌بندی <i>آماده‌ی چاپ</i>', svc6:'طراحی لوگو <i>نشانه و مونوگرام</i>',
+fact1h:'تجربه', fact1p:'۵+ سال در برندینگ، شبکه‌های اجتماعی و ویدیو',
+fact2h:'ابزارها', fact2p:'فتوشاپ · ایلاستریتور · فاینال‌کات · هوش مصنوعی',
+fact3h:'وضعیت', fact3p:'برای پروژه‌های جدید در دسترس',
+workLabel:'نمونه‌کارهای منتخب', workH2:'پروژه‌ها', workP:'گزیده‌ای از کارهای اخیر در برندینگ، شبکه‌های اجتماعی و طراحی بصری.',
+p1Title:'تامبنیل‌های یوتیوب',
+p1Desc:'مجموعه‌ای از تامبنیل‌های پربازدید برای سازندگان فارسی‌زبان — ترکیب‌بندی‌های جسورانه، سوژه‌های پرحالت و تایپوگرافی‌ای که برای متوقف‌کردن اسکرول ساخته شده است. یک زبان بصری یکدست و پرضرب در کانال‌های <b>فناوری، ورزش، پادکست و سبک زندگی</b>.',
+p1MetaScope:'<b>حوزه</b>طراحی شبکه‌های اجتماعی', p1MetaDeliv:'<b>خروجی‌ها</b>۱۰ تامبنیل', p1MetaYear:'<b>سال</b>۲۰۲۵ – ۲۰۲۶',
+t1:'دوئل تریدرها<small>کانال مالی</small>', t2:'گاراژ جیمنی<small>خودرو</small>', t3:'تحلیل پرسپولیس<small>ورزش</small>',
+t4:'ماجراجویی جنگل<small>سبک زندگی</small>', t5:'بررسی مک مینی M4<small>فناوری</small>', t6:'کلود ۰ تا ۱۰۰<small>فناوری / هوش مصنوعی</small>',
+t7:'پادکست · مارکت ایران<small>پادکست</small>', t8:'گالری خودرو<small>سوپراسپرت‌ها</small>', t9:'ولوگ · ولوگ تولد<small>سبک زندگی</small>',
+t10:'رفع مشکل اپل آیدی<small>فناوری</small>',
+p2Title:'پیرانا فود',
+p2Desc:'هویت بصری کامل برای <b>پیرانا</b> — برند کافه و فست‌فود با روحی مدیترانه‌ای، دریایی و آرت‌دکو. کاراکتر برند: یک فلامینگو. نشانه: دو طاق مرجانی با لوگوتایپ فارسی. یک سیستم کامل — <b>پالت رنگی، ست آیکون، بسته‌بندی و چاپ</b> — با زبان مینیمال آرت‌دکو که از کارت ویزیت تا جعبه‌های بیرون‌بر ادامه دارد.',
+p2MetaScope:'<b>حوزه</b>هویت بصری برند', p2MetaDeliv:'<b>خروجی‌ها</b>لوگو · آیکون · بسته‌بندی · چاپ', p2MetaYear:'<b>سال</b>۲۰۲۵',
+sw1:'سبز عمیق<small>پس‌زمینه · گیاهان · دیوارها</small>', sw2:'مرجانی<small>پیش‌زمینه · هایلایت‌ها</small>',
+sw3:'اخرایی<small>چوب · بسته‌بندی</small>', sw4:'ذغالی<small>تایپوگرافی · فلزات</small>',
+p3Title:'میروس',
+p3Desc:'طراحی لوگو برای <b>Miross by Arta</b> — مونوگرام «M» گوتیک سفید با تاجی از الماس، روی یک نمای نزدیک سینمایی و تیره. <b>فقط لوگو</b> — بقیه‌ی وب‌سایت اصلی این برند طراحی من نیست.',
+p3MetaScope:'<b>حوزه</b>طراحی لوگو', p3MetaDeliv:'<b>خروجی‌ها</b>مونوگرام · لاک‌آپ', p3MetaYear:'<b>سال</b>۲۰۲۵',
+p4Title:'وزارت بهداشت',
+p4Desc:'هویت بصری معاونت تحقیقات و فناوری — وزارت بهداشت، درمان و آموزش پزشکی. درختی از خطوط منحنی، مهندسی‌شده از <b>هندسه‌ی ناب</b>. لوگو، سیستم ساخت، نوار بسته‌بندی و ست اداری.',
+p4MetaScope:'<b>حوزه</b>لوگو و سیستم هویت', p4MetaDeliv:'<b>خروجی‌ها</b>لوگو · ساختار · ست اداری', p4MetaYear:'<b>سال</b>۲۰۲۵',
+whyLabel:'چرا من', whyH2:'برند شما با من<br>به اینجا می‌رسد.',
+statB1:'۳۵٪', statS1:'۲۰۰۰', statB2:'۴۸٪', statS2:'۲۰۱۰', statB3:'۶۲٪', statS3:'۲۰۲۰', statB4:'۷۱٪', statS4:'۲۰۲۵',
+contactLabel:'تماس', contactH2:'بیایید با هم<br>کار کنیم.', contactLead:'برای پروژه‌های جدید در دسترس‌ام — هویت بصری برند، تامبنیل و تصاویر.',
+igSmall:'در اینستاگرام',
+footerCopy:'© ۲۰۲۶ آرین بابایی', footerRole:'طراح گرافیک و تدوین‌گر ویدیو'
+};
+const FA_TITLE = 'آرین بابایی — طراح گرافیک و تدوین‌گر ویدیو';
+const FA_DESC = 'پورتفولیوی آرین بابایی — هویت بصری برند، تامبنیل یوتیوب، طراحی لوگو و تدوین ویدیو.';
+const EN_TITLE = document.title;
+const EN_DESC = document.querySelector('meta[name="description"]').content;
+const i18nEls = [...document.querySelectorAll('[data-i18n]')];
+const enCache = new Map(i18nEls.map(el => [el, el.innerHTML]));
+function setLang(l){
+  const fa = l === 'fa';
+  document.documentElement.lang = fa ? 'fa' : 'en';
+  document.documentElement.dir = fa ? 'rtl' : 'ltr';
+  i18nEls.forEach(el => { const k = el.dataset.i18n; el.innerHTML = fa ? (FA[k] ?? enCache.get(el)) : enCache.get(el); });
+  document.title = fa ? FA_TITLE : EN_TITLE;
+  document.querySelector('meta[name="description"]').content = fa ? FA_DESC : EN_DESC;
+  document.querySelectorAll('.ls-opt').forEach(o => o.classList.toggle('on', o.dataset.l === l));
+  try { localStorage.setItem('portfolio-lang', l); } catch(e){}
+}
+document.getElementById('langSwitch').addEventListener('click', e => {
+  const t = e.target.closest('.ls-opt');
+  const cur = document.documentElement.lang === 'fa' ? 'fa' : 'en';
+  setLang(t ? t.dataset.l : (cur === 'fa' ? 'en' : 'fa'));
+});
+try { if (localStorage.getItem('portfolio-lang') === 'fa') setLang('fa'); } catch(e){}
 </script>
 </body>
 </html>
