@@ -258,21 +258,15 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
 }
 @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}.marquee-track{animation:none}}
 
-/* ---------- language switch ---------- */
-.lang-switch{display:inline-flex;align-items:stretch;border:1px solid rgba(10,26,46,.22);background:rgba(255,255,255,.5);
-  -webkit-backdrop-filter:blur(20px) saturate(160%);backdrop-filter:blur(20px) saturate(160%);cursor:pointer;padding:0;border-radius:999px;flex:none;overflow:hidden}
-.lang-switch .ls-opt{display:flex;align-items:center;padding:8px 12px;font-size:.78rem;font-weight:600;color:var(--muted);transition:background .2s,color .2s;line-height:1.2}
-.lang-switch .ls-opt.on{background:var(--carbon);color:var(--cream)}
-.lang-switch .ls-fa{font-family:'AbarHigh',var(--sf);font-size:.86rem}
 /* ---------- mode switch: design / creative director ---------- */
 .mode-switch{display:inline-flex;align-items:stretch;border:1px solid rgba(10,26,46,.22);background:rgba(255,255,255,.5);
   -webkit-backdrop-filter:blur(20px) saturate(160%);backdrop-filter:blur(20px) saturate(160%);cursor:pointer;padding:0;border-radius:999px;flex:none;overflow:hidden}
-.mode-switch .ms-opt{display:flex;align-items:center;padding:8px 14px;font-size:.78rem;font-weight:600;color:var(--muted);transition:background .2s,color .2s;line-height:1.2;white-space:nowrap}
+.mode-switch .ms-opt{display:flex;align-items:center;padding:11px 20px;font-size:.92rem;font-weight:600;color:var(--muted);transition:background .2s,color .2s;line-height:1.2;white-space:nowrap}
 .mode-switch .ms-opt.on{background:var(--carbon);color:var(--cream)}
-.hero-mode{display:flex;align-items:center;gap:12px;margin-top:24px;flex-wrap:wrap}
-.hero-mode .hm-label{font-size:.85rem;font-weight:500;color:var(--on-dark-muted)}
-.hero-mode .mode-switch{border-color:rgba(255,255,255,.28);background:rgba(255,255,255,.12)}
-.hero-mode .mode-switch .ms-opt{color:var(--on-dark-muted)}
+.hero-mode{display:flex;align-items:center;gap:14px;margin:0 0 30px;flex-wrap:wrap}
+.hero-mode .hm-label{font-size:.95rem;font-weight:500;color:var(--on-dark-muted)}
+.hero-mode .mode-switch{border-color:rgba(255,255,255,.28);background:rgba(255,255,255,.12);box-shadow:0 12px 32px rgba(0,0,0,.28)}
+.hero-mode .mode-switch .ms-opt{color:var(--on-dark-muted);padding:15px 28px;font-size:1.05rem}
 .hero-mode .mode-switch .ms-opt.on{background:rgba(255,255,255,.92);color:var(--carbon)}
 /* ---------- mode visibility ---------- */
 html[data-mode="design"] .mode-creative,
@@ -327,7 +321,7 @@ html[data-mode="creative"] ::selection{background:var(--carbon4);color:var(--cre
 .idea-card p{font-size:.9rem;color:var(--muted)}
 /* ---------- RTL / Persian mode ---------- */
 html[dir="rtl"] body{font-family:'AbarHigh',var(--sf);line-height:1.9}
-html[dir="rtl"] .btn,html[dir="rtl"] .nav .brand,html[dir="rtl"] .lang-switch{font-family:'AbarHigh',var(--sf)}
+html[dir="rtl"] .btn,html[dir="rtl"] .nav .brand,html[dir="rtl"] .mode-switch{font-family:'AbarHigh',var(--sf)}
 html[dir="rtl"] h1,html[dir="rtl"] h2,html[dir="rtl"] h3{letter-spacing:-.01em}
 html[dir="rtl"] .label,html[dir="rtl"] .p-num,html[dir="rtl"] .fact h4,html[dir="rtl"] .p-meta b,html[dir="rtl"] .nav .brand,html[dir="rtl"] .chip{letter-spacing:0}
 html[dir="rtl"] .marquee-track{animation-direction:reverse}
@@ -337,21 +331,20 @@ html[dir="rtl"] .marquee-track{animation-direction:reverse}
 
 <nav class="nav">
   <div class="nav-in glass">
-    <a class="brand" href="#top" data-i18n="navBrand">Arian Babaee <i>©2026</i></a>
+    <a class="brand" href="#top">آرین بابایی</a>
     <div class="links links-design">
-      <a class="nl" href="#work" data-i18n="navWork">Work</a>
-      <a class="nl" href="#about" data-i18n="navAbout">About</a>
-      <a class="nl" href="#contact" data-i18n="navContact">Contact</a>
+      <a class="nl" href="#work">نمونه‌کارها</a>
+      <a class="nl" href="#about">درباره من</a>
+      <a class="nl" href="#contact">تماس</a>
     </div>
     <div class="links links-creative">
-      <a class="nl" href="#resume" data-i18n="navResume">Résumé</a>
-      <a class="nl" href="#ideas" data-i18n="navIdeas">Ideation</a>
-      <a class="nl" href="#contact" data-i18n="navContact">Contact</a>
+      <a class="nl" href="#resume">رزومه</a>
+      <a class="nl" href="#ideas">ایده‌پردازی</a>
+      <a class="nl" href="#contact">تماس</a>
     </div>
     <div class="nav-right">
-      <button class="mode-switch" id="modeSwitch" type="button" aria-label="Section / بخش"><span class="ms-opt on" data-m="design" data-i18n="modeDesignShort">Design</span><span class="ms-opt" data-m="creative" data-i18n="modeCreativeShort">Creative</span></button>
-      <button class="lang-switch" id="langSwitch" type="button" aria-label="Language / زبان"><span class="ls-opt" data-l="en">EN</span><span class="ls-opt ls-fa on" data-l="fa">فا</span></button>
-      <a class="btn btn-sm" href="#contact" data-i18n="navTalk">Let's talk</a>
+      <button class="mode-switch" id="modeSwitch" type="button" aria-label="Section / بخش"><span class="ms-opt on" data-m="design">دیزاین</span><span class="ms-opt" data-m="creative">خلاقیت</span></button>
+      <a class="btn btn-sm" href="#contact">گفت‌وگو کنیم</a>
     </div>
   </div>
 </nav>
@@ -361,77 +354,71 @@ html[dir="rtl"] .marquee-track{animation-direction:reverse}
     <div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div>
     <div class="hero-grid"></div>
     <div class="hero-in hero-in-design">
-      <span class="chip glass-dark reveal"><span class="dot"></span><span data-i18n="heroLabel">Portfolio — 2026</span></span>
-      <div class="hero-mode reveal"><span class="hm-label" data-i18n="viewAs">View as:</span>
-        <span class="mode-switch"><span class="ms-opt on" data-m="design" data-i18n="modeDesign">Graphic Design</span><span class="ms-opt" data-m="creative" data-i18n="modeCreative">Creative Director</span></span>
+      <div class="hero-mode reveal"><span class="hm-label">مشاهده به‌عنوان:</span>
+        <span class="mode-switch"><span class="ms-opt on" data-m="design">گرافیک دیزاین</span><span class="ms-opt" data-m="creative">مدیر خلاقیت</span></span>
       </div>
-      <h1 class="reveal"><span data-i18n="heroName">Arian Babaee</span><br><span class="grad" data-i18n="heroTag">Design, in focus.</span></h1>
-      <p class="sub reveal" data-i18n="heroSub">Graphic designer &amp; video editor crafting brand identities, thumbnails and visuals with precision and care.</p>
+      <span class="chip glass-dark reveal"><span class="dot"></span><span>پورتفولیو — ۲۰۲۶</span></span>
+      <h1 class="reveal"><span>آرین بابایی</span><br><span class="grad">طراحی، در کانون توجه.</span></h1>
+      <p class="sub reveal">طراح گرافیک و تدوین‌گر ویدیو — هویت بصری برند، تامبنیل و تصاویر را با دقت و وسواس می‌سازم.</p>
       <div class="hero-cta reveal">
-        <a class="btn btn-cream" href="#work" data-i18n="heroCtaWork">View work</a>
-        <a class="btn btn-light" href="#contact" data-i18n="heroCtaContact">Get in touch</a>
+        <a class="btn btn-cream" href="#work">مشاهده نمونه‌کارها</a>
+        <a class="btn btn-light" href="#contact">تماس با من</a>
       </div>
       <div class="hero-meta reveal">
-        <div class="m glass-dark"><b data-i18n="heroMeta1b">5+ years</b><span data-i18n="heroMeta1s">Experience</span></div>
-        <div class="m glass-dark"><b>Ps · Ai · Fc</b><span data-i18n="heroMeta2s">Core tools</span></div>
-        <div class="m glass-dark"><b data-i18n="heroMeta3b">Available</b><span data-i18n="heroMeta3s">For new projects</span></div>
+        <div class="m glass-dark"><b>۵+ سال</b><span>تجربه</span></div>
+        <div class="m glass-dark"><b>Ps · Ai · Fc</b><span>ابزارهای اصلی</span></div>
+        <div class="m glass-dark"><b>در دسترس</b><span>برای پروژه‌های جدید</span></div>
       </div>
     </div>
     <div class="hero-in hero-in-creative">
-      <span class="chip glass-dark reveal"><span class="dot"></span><span data-i18n="heroCLabel">Creative Director — 2026</span></span>
-      <div class="hero-mode reveal"><span class="hm-label" data-i18n="viewAs">View as:</span>
-        <span class="mode-switch"><span class="ms-opt" data-m="design" data-i18n="modeDesign">Graphic Design</span><span class="ms-opt on" data-m="creative" data-i18n="modeCreative">Creative Director</span></span>
+      <div class="hero-mode reveal"><span class="hm-label">مشاهده به‌عنوان:</span>
+        <span class="mode-switch"><span class="ms-opt" data-m="design">گرافیک دیزاین</span><span class="ms-opt on" data-m="creative">مدیر خلاقیت</span></span>
       </div>
-      <h1 class="reveal"><span data-i18n="heroCName">Arian Babaee</span><br><span class="grad" data-i18n="heroCTag">Creativity, in focus.</span></h1>
-      <p class="sub reveal" data-i18n="heroCSub">Creative Director for Iris Perfume and DigiNext — from a spark of an idea to a campaign people remember.</p>
+      <span class="chip glass-dark reveal"><span class="dot"></span><span>مدیر خلاقیت — ۲۰۲۶</span></span>
+      <h1 class="reveal"><span>آرین بابایی</span><br><span class="grad">خلاقیت، در کانون توجه.</span></h1>
+      <p class="sub reveal">مدیر خلاقیت برندهای عطر آیریس و دیجی نکست — از جرقه‌ی ایده تا کمپینی که دیده می‌شود.</p>
       <div class="hero-cta reveal">
-        <a class="btn btn-cream" href="#resume" data-i18n="heroCCta1">View résumé</a>
-        <a class="btn btn-light" href="#contact" data-i18n="heroCCta2">Get in touch</a>
+        <a class="btn btn-cream" href="#resume">مشاهده رزومه</a>
+        <a class="btn btn-light" href="#contact">تماس با من</a>
       </div>
       <div class="hero-meta reveal">
-        <div class="m glass-dark"><b data-i18n="heroCM1b">3 years</b><span data-i18n="heroCM1s">Creative Director — Iris Perfume</span></div>
-        <div class="m glass-dark"><b data-i18n="heroCM2b">1.5 years</b><span data-i18n="heroCM2s">Creative Director — DigiNext</span></div>
-        <div class="m glass-dark"><b data-i18n="heroCM3b">Available</b><span data-i18n="heroCM3s">For new projects</span></div>
+        <div class="m glass-dark"><b>۳ سال</b><span>مدیر خلاقیت — عطر آیریس</span></div>
+        <div class="m glass-dark"><b>۱٫۵ سال</b><span>مدیر خلاقیت — دیجی نکست</span></div>
+        <div class="m glass-dark"><b>در دسترس</b><span>برای پروژه‌های جدید</span></div>
       </div>
     </div>
   </div>
 </header>
 
 <div class="marquee marquee-design" aria-hidden="true">
-  <div class="marquee-track">
-    <span>Brand Identity <i>✦</i></span><span>YouTube Thumbnails <i>✦</i></span><span>Video Editing <i>✦</i></span><span>Logo Design <i>✦</i></span><span>Packaging <i>✦</i></span><span>Social Media <i>✦</i></span>
-    <span>Brand Identity <i>✦</i></span><span>YouTube Thumbnails <i>✦</i></span><span>Video Editing <i>✦</i></span><span>Logo Design <i>✦</i></span><span>Packaging <i>✦</i></span><span>Social Media <i>✦</i></span>
-  </div>
+  <div class="marquee-track"><span>هویت بصری <i>✦</i></span><span>تامبنیل یوتیوب <i>✦</i></span><span>تدوین ویدیو <i>✦</i></span><span>طراحی لوگو <i>✦</i></span><span>بسته‌بندی <i>✦</i></span><span>شبکه‌های اجتماعی <i>✦</i></span><span>هویت بصری <i>✦</i></span><span>تامبنیل یوتیوب <i>✦</i></span><span>تدوین ویدیو <i>✦</i></span><span>طراحی لوگو <i>✦</i></span><span>بسته‌بندی <i>✦</i></span><span>شبکه‌های اجتماعی <i>✦</i></span></div>
 </div>
 <div class="marquee marquee-creative" aria-hidden="true">
-  <div class="marquee-track">
-    <span>Creative Direction <i>✦</i></span><span>Campaign Strategy <i>✦</i></span><span>Content Strategy <i>✦</i></span><span>Brand Storytelling <i>✦</i></span><span>Ideation <i>✦</i></span><span>Art Direction <i>✦</i></span>
-    <span>Creative Direction <i>✦</i></span><span>Campaign Strategy <i>✦</i></span><span>Content Strategy <i>✦</i></span><span>Brand Storytelling <i>✦</i></span><span>Ideation <i>✦</i></span><span>Art Direction <i>✦</i></span>
-  </div>
+  <div class="marquee-track"><span>مدیریت خلاقیت <i>✦</i></span><span>استراتژی کمپین <i>✦</i></span><span>استراتژی محتوا <i>✦</i></span><span>داستان برند <i>✦</i></span><span>ایده‌پردازی <i>✦</i></span><span>کارگردانی هنری <i>✦</i></span><span>مدیریت خلاقیت <i>✦</i></span><span>استراتژی کمپین <i>✦</i></span><span>استراتژی محتوا <i>✦</i></span><span>داستان برند <i>✦</i></span><span>ایده‌پردازی <i>✦</i></span><span>کارگردانی هنری <i>✦</i></span></div>
 </div>
 
 <section id="about" class="mode-design">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="label" data-i18n="aboutLabel">About</span>
-      <h2 data-i18n="aboutH2">Designer, editor,<br>visual problem-solver.</h2>
+      <span class="label">درباره من</span>
+      <h2>طراح، تدوین‌گر،<br>حل‌کننده‌ی مسئله‌های بصری.</h2>
     </div>
     <div class="about-grid">
       <div class="portrait reveal"><span class="tag glass-dark">Arian Babaee — 2026</span><span class="ab">AB</span></div>
       <div class="about-main glass reveal">
-        <p class="lead" data-i18n="aboutPara">I'm <b>Arian Babaee</b> — a graphic designer &amp; video editor with 5+ years of experience. I work with <b>Photoshop, Final Cut &amp; Illustrator</b>, and I love bringing visual ideas to life with AI. I've explored UI design, music composition and more — always open to trying something new.</p>
+        <p class="lead">من <b>آرین بابایی</b> هستم — طراح گرافیک و تدوین‌گر ویدیو با بیش از ۵ سال تجربه. با <b>فتوشاپ، فاینال‌کات و ایلاستریتور</b> کار می‌کنم و عاشق جان‌دادن به ایده‌های بصری با کمک هوش مصنوعی‌ام. طراحی رابط کاربری، ساخت موسیقی و چند حوزه‌ی دیگر را هم تجربه کرده‌ام — و همیشه برای تجربه‌های تازه آماده‌ام.</p>
         <ul class="svc">
-          <li data-i18n="svc1">Brand Identity <i>Logos &amp; systems</i></li>
-          <li data-i18n="svc2">YouTube Thumbnails <i>High-click design</i></li>
-          <li data-i18n="svc3">Video Editing <i>Final Cut Pro</i></li>
-          <li data-i18n="svc4">Social Media Design <i>Feeds &amp; campaigns</i></li>
-          <li data-i18n="svc5">Packaging <i>Print-ready</i></li>
-          <li data-i18n="svc6">Logo Design <i>Marks &amp; monograms</i></li>
+          <li>هویت بصری برند <i>لوگو و سیستم‌های بصری</i></li>
+          <li>تامبنیل یوتیوب <i>طراحی پربازدید</i></li>
+          <li>تدوین ویدیو <i>فاینال‌کات پرو</i></li>
+          <li>طراحی شبکه‌های اجتماعی <i>فید و کمپین</i></li>
+          <li>بسته‌بندی <i>آماده‌ی چاپ</i></li>
+          <li>طراحی لوگو <i>نشانه و مونوگرام</i></li>
         </ul>
         <div class="facts">
-          <div class="fact"><h4 data-i18n="fact1h">Experience</h4><p data-i18n="fact1p">5+ years across branding, social &amp; video</p></div>
-          <div class="fact"><h4 data-i18n="fact2h">Tools</h4><p data-i18n="fact2p">Photoshop · Illustrator · Final Cut · AI</p></div>
-          <div class="fact"><h4 data-i18n="fact3h">Status</h4><p data-i18n="fact3p">Available for new projects</p></div>
+          <div class="fact"><h4>تجربه</h4><p>۵+ سال در برندینگ، شبکه‌های اجتماعی و ویدیو</p></div>
+          <div class="fact"><h4>ابزارها</h4><p>فتوشاپ · ایلاستریتور · فاینال‌کات · هوش مصنوعی</p></div>
+          <div class="fact"><h4>وضعیت</h4><p>برای پروژه‌های جدید در دسترس</p></div>
         </div>
       </div>
     </div>
@@ -441,27 +428,27 @@ html[dir="rtl"] .marquee-track{animation-direction:reverse}
 <section id="resume" class="mode-creative">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="label" data-i18n="resumeLabel">Résumé</span>
-      <h2 data-i18n="resumeH2">Creative Director<br>at two brands.</h2>
-      <p data-i18n="resumeP">A short résumé of my work as Creative Director — two brands, two experiences, one job: the idea.</p>
+      <span class="label">رزومه کاری</span>
+      <h2>مدیر خلاقیت<br>دو برند.</h2>
+      <p>رزومه‌ی کوتاه کاری من به‌عنوان مدیر خلاقیت — دو برند، دو تجربه، یک کار: ایده.</p>
     </div>
     <div class="resume-grid">
       <div class="role-card glass reveal">
-        <div class="rc-brand" data-i18n="role1t">Iris Perfume</div>
-        <span class="rc-meta" data-i18n="role1meta">Creative Director · 3 years</span>
-        <p data-i18n="role1d">Creative direction for an Iranian handmade niche perfume brand — ideation for advertising, campaigns, discounts and brand content.</p>
-        <b class="rc-years"><span data-i18n="role1y">3 years</span> <span data-i18n="role1ys">as Creative Director</span></b>
+        <div class="rc-brand">عطر آیریس</div>
+        <span class="rc-meta">مدیر خلاقیت · ۳ سال</span>
+        <p>مدیریت خلاقیت برند عطر دست‌ساز ایرانی — ایده‌پردازی تبلیغات، کمپین‌ها، تخفیف‌ها و محتوای برند.</p>
+        <b class="rc-years"><span>۳ سال</span> <span>به‌عنوان مدیر خلاقیت</span></b>
       </div>
       <div class="role-card glass reveal">
-        <div class="rc-brand" data-i18n="role2t">DigiNext</div>
-        <span class="rc-meta" data-i18n="role2meta">Creative Director · 1.5 years</span>
-        <p data-i18n="role2d">Creative direction for the DigiNext brand — ideation for campaigns, programs and brand content.</p>
-        <b class="rc-years"><span data-i18n="role2y">1.5 years</span> <span data-i18n="role2ys">as Creative Director</span></b>
+        <div class="rc-brand">دیجی نکست</div>
+        <span class="rc-meta">مدیر خلاقیت · ۱٫۵ سال</span>
+        <p>مدیریت خلاقیت برند دیجی نکست — ایده‌پردازی کمپین‌ها، برنامه‌ها و محتوای برند.</p>
+        <b class="rc-years"><span>۱٫۵ سال</span> <span>به‌عنوان مدیر خلاقیت</span></b>
       </div>
     </div>
     <div class="role-explain glass reveal">
-      <h3 data-i18n="roleH">What does a Creative Director do?</h3>
-      <p data-i18n="roleP">A Creative Director finds the brand's big idea and turns it into an ad, a campaign, a discount, a program, a piece of content. I stay with a brand from the first spark of an idea to launch and beyond — <b>ideation for advertising, campaigns, discounts, programs, content and much more.</b></p>
+      <h3>مدیر خلاقیت چه کار می‌کند؟</h3>
+      <p>مدیر خلاقیت کسی است که ایده‌ی اصلی برند را پیدا می‌کند و آن را به تبلیغ، کمپین، تخفیف، برنامه و محتوا تبدیل می‌کند. من از جرقه‌ی اول ایده تا اجرا و دیده‌شدن آن کنار برند می‌ایستم — <b>ایده‌پردازی برای تبلیغات، کمپین‌ها، تخفیف‌ها، برنامه‌ها، محتواها و خیلی چیزهای دیگر.</b></p>
     </div>
   </div>
 </section>
@@ -469,17 +456,17 @@ html[dir="rtl"] .marquee-track{animation-direction:reverse}
 <section id="ideas" class="mode-creative" style="padding-top:0">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="label" data-i18n="ideasLabel">Ideation</span>
-      <h2 data-i18n="ideasH2">Ideas, for everything.</h2>
-      <p data-i18n="ideasP">Every part of a brand needs an idea — and ideation is my main job.</p>
+      <span class="label">ایده‌پردازی</span>
+      <h2>ایده، برای همه‌چیز.</h2>
+      <p>هر بخش برند یک ایده می‌خواهد — و ایده‌پردازی، کار اصلی من است.</p>
     </div>
     <div class="idea-grid">
-      <div class="idea-card glass reveal"><span class="ic-num">01</span><h3 data-i18n="id1t">Advertising</h3><p data-i18n="id1d">Ideas that make an ad get seen, not just shown.</p></div>
-      <div class="idea-card glass reveal"><span class="ic-num">02</span><h3 data-i18n="id2t">Campaigns</h3><p data-i18n="id2d">Campaigns from idea to launch, with one story throughout.</p></div>
-      <div class="idea-card glass reveal"><span class="ic-num">03</span><h3 data-i18n="id3t">Discounts</h3><p data-i18n="id3d">Offers that grow the customer's basket.</p></div>
-      <div class="idea-card glass reveal"><span class="ic-num">04</span><h3 data-i18n="id4t">Programs</h3><p data-i18n="id4d">Programs and events that keep a brand alive.</p></div>
-      <div class="idea-card glass reveal"><span class="ic-num">05</span><h3 data-i18n="id5t">Content</h3><p data-i18n="id5d">Content that holds the audience — and brings them back.</p></div>
-      <div class="idea-card glass reveal"><span class="ic-num">06</span><h3 data-i18n="id6t">And much more</h3><p data-i18n="id6d">Wherever a brand needs a fresh idea.</p></div>
+      <div class="idea-card glass reveal"><span class="ic-num">01</span><h3>تبلیغات</h3><p>ایده‌هایی که تبلیغ را دیده‌شدن می‌کنند، نه فقط نمایش.</p></div>
+      <div class="idea-card glass reveal"><span class="ic-num">02</span><h3>کمپین‌ها</h3><p>کمپین‌هایی از ایده تا اجرا، با یک داستان واحد.</p></div>
+      <div class="idea-card glass reveal"><span class="ic-num">03</span><h3>تخفیف‌ها</h3><p>پیشنهادهایی که سبد خرید مشتری را بزرگ‌تر می‌کنند.</p></div>
+      <div class="idea-card glass reveal"><span class="ic-num">04</span><h3>برنامه‌ها</h3><p>برنامه‌ها و رویدادهایی که برند را زنده نگه می‌دارند.</p></div>
+      <div class="idea-card glass reveal"><span class="ic-num">05</span><h3>محتواها</h3><p>محتوایی که مخاطب را نگه می‌دارد و برمی‌گرداند.</p></div>
+      <div class="idea-card glass reveal"><span class="ic-num">06</span><h3>و خیلی بیشتر</h3><p>هر جا برند به ایده‌ای تازه نیاز دارد.</p></div>
     </div>
   </div>
 </section>
@@ -487,14 +474,14 @@ html[dir="rtl"] .marquee-track{animation-direction:reverse}
 <section id="creative" class="mode-creative" style="padding-top:0">
   <div class="wrap">
     <div class="why-panel reveal">
-      <span class="label" data-i18n="creativeLabel">Creative Direction</span>
-      <h2 data-i18n="creativeH2">Creativity, led<br>from idea to launch.</h2>
-      <p data-i18n="creativeP">As Creative Director, I take a brand from a spark of an idea to a campaign people remember — concept, visuals, content and the team behind them.</p>
+      <span class="label">مدیریت خلاقیت</span>
+      <h2>خلاقیت، از ایده<br>تا اجرا.</h2>
+      <p>به‌عنوان مدیر خلاقیت، برند را از جرقه‌ی یک ایده تا کمپینی که در ذهن می‌ماند همراهی می‌کنم — کانسپت، تصویر، محتوا و تیمی که آن را می‌سازد.</p>
       <div class="creative-grid">
-        <div class="cr-card glass-dark"><span class="cr-num">01</span><h3 data-i18n="cr1t">Ideation &amp; Concept</h3><p data-i18n="cr1d">From a first spark to a full campaign concept — the big idea, the story, the angle.</p></div>
-        <div class="cr-card glass-dark"><span class="cr-num">02</span><h3 data-i18n="cr2t">Campaigns</h3><p data-i18n="cr2d">Seasonal and launch campaigns planned end to end — visuals, copy and rollout.</p></div>
-        <div class="cr-card glass-dark"><span class="cr-num">03</span><h3 data-i18n="cr3t">Brand Identity &amp; Story</h3><p data-i18n="cr3d">Identities with a story behind them — so a brand is recognised, not just seen.</p></div>
-        <div class="cr-card glass-dark"><span class="cr-num">04</span><h3 data-i18n="cr4t">Content &amp; Creative Ads</h3><p data-i18n="cr4d">Social content and ads that stop the scroll — designed, written and directed to convert.</p></div>
+        <div class="cr-card glass-dark"><span class="cr-num">01</span><h3>ایده‌پردازی و کانسپت</h3><p>از جرقه‌ی اول تا کانسپت کامل کمپین — ایده‌ی بزرگ، داستان و زاویه‌ی دید.</p></div>
+        <div class="cr-card glass-dark"><span class="cr-num">02</span><h3>کمپین‌های تبلیغاتی</h3><p>کمپین‌های فصلی و لانچ، از برنامه‌ریزی تا اجرا — تصویر، متن و زمان‌بندی انتشار.</p></div>
+        <div class="cr-card glass-dark"><span class="cr-num">03</span><h3>هویت بصری و داستان برند</h3><p>هویت‌هایی با داستانی پشت‌شان — تا برند دیده شود و در ذهن بماند.</p></div>
+        <div class="cr-card glass-dark"><span class="cr-num">04</span><h3>تولید محتوا و تبلیغات خلاقانه</h3><p>محتوای شبکه‌های اجتماعی و تبلیغاتی که اسکرول را متوقف می‌کند — طراحی‌شده و هدفمند.</p></div>
       </div>
     </div>
   </div>
@@ -503,48 +490,48 @@ html[dir="rtl"] .marquee-track{animation-direction:reverse}
 <section id="work" class="mode-design" style="padding-top:20px">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="label" data-i18n="workLabel">Selected work</span>
-      <h2 data-i18n="workH2">Projects</h2>
-      <p data-i18n="workP">A selection of recent work across branding, social and visual design.</p>
+      <span class="label">نمونه‌کارهای منتخب</span>
+      <h2>پروژه‌ها</h2>
+      <p>گزیده‌ای از کارهای اخیر در برندینگ، شبکه‌های اجتماعی و طراحی بصری.</p>
     </div>
 
     <!-- 01 thumbnails -->
     <article class="project glass reveal">
-      <div class="p-top"><span class="p-num">01 — THUMBNAILS</span><span class="p-year" data-i18n="p1MetaYear"><b>Year</b> 2025 – 2026</span></div>
-      <h3 class="p-title" data-i18n="p1Title">YouTube Thumbnails</h3>
-      <p class="p-desc" data-i18n="p1Desc">A series of high-click thumbnails for Persian creators — bold compositions, expressive subjects and typography built to stop the scroll. A consistent, punchy visual language across <b>tech, sport, podcast and lifestyle</b> channels.</p>
+      <div class="p-top"><span class="p-num">01 — THUMBNAILS</span><span class="p-year"><b>سال</b>۲۰۲۵ – ۲۰۲۶</span></div>
+      <h3 class="p-title">تامبنیل‌های یوتیوب</h3>
+      <p class="p-desc">مجموعه‌ای از تامبنیل‌های پربازدید برای سازندگان فارسی‌زبان — ترکیب‌بندی‌های جسورانه، سوژه‌های پرحالت و تایپوگرافی‌ای که برای متوقف‌کردن اسکرول ساخته شده است. یک زبان بصری یکدست و پرضرب در کانال‌های <b>فناوری، ورزش، پادکست و سبک زندگی</b>.</p>
       <div class="p-meta">
-        <div data-i18n="p1MetaScope"><b>Scope</b>Social media design</div>
-        <div data-i18n="p1MetaDeliv"><b>Deliverables</b>10 thumbnails</div>
+        <div><b>حوزه</b>طراحی شبکه‌های اجتماعی</div>
+        <div><b>خروجی‌ها</b>۱۰ تامبنیل</div>
       </div>
       <div class="tgrid">
-        <div class="tile"><div class="im"><img src="images/thumb-traders.jpg" alt="Traders' Duel — YouTube thumbnail design" loading="lazy"></div><div class="cap" data-i18n="t1">Traders' Duel<small>Finance channel</small></div></div>
-        <div class="tile"><div class="im"><img src="images/thumb-jimny.jpg" alt="Jimny Garage — YouTube thumbnail design" loading="lazy"></div><div class="cap" data-i18n="t2">Jimny Garage<small>Automotive</small></div></div>
-        <div class="tile"><div class="im"><img src="images/thumb-persepolis.jpg" alt="Persepolis Analysis — YouTube thumbnail design" loading="lazy"></div><div class="cap" data-i18n="t3">Persepolis Analysis<small>Sport</small></div></div>
-        <div class="tile"><div class="im"><img src="images/thumb-jungle.jpg" alt="Jungle Adventure — YouTube thumbnail design" loading="lazy"></div><div class="cap" data-i18n="t4">Jungle Adventure<small>Lifestyle</small></div></div>
-        <div class="tile"><div class="im"><img src="images/thumb-macmini.jpg" alt="Mac mini M4 Review — YouTube thumbnail design" loading="lazy"></div><div class="cap" data-i18n="t5">Mac mini M4 Review<small>Tech</small></div></div>
-        <div class="tile"><div class="im"><img src="images/thumb-claude.jpg" alt="Claude 0 → 100 — YouTube thumbnail design" loading="lazy"></div><div class="cap" data-i18n="t6">Claude 0 → 100<small>Tech / AI</small></div></div>
-        <div class="tile"><div class="im"><img src="images/thumb-podcast.jpg" alt="Podcast · مارکت ایران — YouTube thumbnail design" loading="lazy"></div><div class="cap" data-i18n="t7">Podcast · مارکت ایران<small>Podcast</small></div></div>
-        <div class="tile"><div class="im"><img src="images/thumb-cargallery.jpg" alt="Car Gallery — YouTube thumbnail design" loading="lazy"></div><div class="cap" data-i18n="t8">Car Gallery<small>Supercars</small></div></div>
-        <div class="tile"><div class="im"><img src="images/thumb-vlog.jpg" alt="Vlog · ولوگ تولد — YouTube thumbnail design" loading="lazy"></div><div class="cap" data-i18n="t9">Vlog · ولوگ تولد<small>Lifestyle</small></div></div>
-        <div class="tile"><div class="im"><img src="images/thumb-appleid.jpg" alt="Apple ID Fix — YouTube thumbnail design" loading="lazy"></div><div class="cap" data-i18n="t10">Apple ID Fix<small>Tech</small></div></div>
+        <div class="tile"><div class="im"><img src="images/thumb-traders.jpg" alt="Traders' Duel — YouTube thumbnail design" loading="lazy"></div><div class="cap">دوئل تریدرها<small>کانال مالی</small></div></div>
+        <div class="tile"><div class="im"><img src="images/thumb-jimny.jpg" alt="Jimny Garage — YouTube thumbnail design" loading="lazy"></div><div class="cap">گاراژ جیمنی<small>خودرو</small></div></div>
+        <div class="tile"><div class="im"><img src="images/thumb-persepolis.jpg" alt="Persepolis Analysis — YouTube thumbnail design" loading="lazy"></div><div class="cap">تحلیل پرسپولیس<small>ورزش</small></div></div>
+        <div class="tile"><div class="im"><img src="images/thumb-jungle.jpg" alt="Jungle Adventure — YouTube thumbnail design" loading="lazy"></div><div class="cap">ماجراجویی جنگل<small>سبک زندگی</small></div></div>
+        <div class="tile"><div class="im"><img src="images/thumb-macmini.jpg" alt="Mac mini M4 Review — YouTube thumbnail design" loading="lazy"></div><div class="cap">بررسی مک مینی M4<small>فناوری</small></div></div>
+        <div class="tile"><div class="im"><img src="images/thumb-claude.jpg" alt="Claude 0 → 100 — YouTube thumbnail design" loading="lazy"></div><div class="cap">کلود ۰ تا ۱۰۰<small>فناوری / هوش مصنوعی</small></div></div>
+        <div class="tile"><div class="im"><img src="images/thumb-podcast.jpg" alt="Podcast · مارکت ایران — YouTube thumbnail design" loading="lazy"></div><div class="cap">پادکست · مارکت ایران<small>پادکست</small></div></div>
+        <div class="tile"><div class="im"><img src="images/thumb-cargallery.jpg" alt="Car Gallery — YouTube thumbnail design" loading="lazy"></div><div class="cap">گالری خودرو<small>سوپراسپرت‌ها</small></div></div>
+        <div class="tile"><div class="im"><img src="images/thumb-vlog.jpg" alt="Vlog · ولوگ تولد — YouTube thumbnail design" loading="lazy"></div><div class="cap">ولوگ · ولوگ تولد<small>سبک زندگی</small></div></div>
+        <div class="tile"><div class="im"><img src="images/thumb-appleid.jpg" alt="Apple ID Fix — YouTube thumbnail design" loading="lazy"></div><div class="cap">رفع مشکل اپل آیدی<small>فناوری</small></div></div>
       </div>
     </article>
 
     <!-- 02 pirana -->
     <article class="project glass reveal">
-      <div class="p-top"><span class="p-num">02 — BRAND IDENTITY</span><span class="p-year" data-i18n="p2MetaYear"><b>Year</b> 2025</span></div>
-      <h3 class="p-title" data-i18n="p2Title">Pirana Food</h3>
-      <p class="p-desc" data-i18n="p2Desc">Full brand identity for <b class="fa" dir="rtl">پیرانا</b> — a cafe &amp; fast-food brand with a Mediterranean, nautical, art-deco soul. The brand's character: a flamingo. The mark: a coral double-arch with a Persian wordmark. A complete system — <b>palette, icon set, packaging and print</b> — with a minimalist art-deco language running from business cards to takeaway boxes.</p>
+      <div class="p-top"><span class="p-num">02 — BRAND IDENTITY</span><span class="p-year"><b>سال</b>۲۰۲۵</span></div>
+      <h3 class="p-title">پیرانا فود</h3>
+      <p class="p-desc">هویت بصری کامل برای <b>پیرانا</b> — برند کافه و فست‌فود با روحی مدیترانه‌ای، دریایی و آرت‌دکو. کاراکتر برند: یک فلامینگو. نشانه: دو طاق مرجانی با لوگوتایپ فارسی. یک سیستم کامل — <b>پالت رنگی، ست آیکون، بسته‌بندی و چاپ</b> — با زبان مینیمال آرت‌دکو که از کارت ویزیت تا جعبه‌های بیرون‌بر ادامه دارد.</p>
       <div class="p-meta">
-        <div data-i18n="p2MetaScope"><b>Scope</b>Brand identity</div>
-        <div data-i18n="p2MetaDeliv"><b>Deliverables</b>Logo · icons · packaging · print</div>
+        <div><b>حوزه</b>هویت بصری برند</div>
+        <div><b>خروجی‌ها</b>لوگو · آیکون · بسته‌بندی · چاپ</div>
       </div>
       <div class="swatches">
-        <div class="swatch"><div class="c" style="background:#1E4D3B"></div><div class="n" data-i18n="sw1">Deep Green<small>Backgrounds · plants · walls</small></div></div>
-        <div class="swatch"><div class="c" style="background:#E07856"></div><div class="n" data-i18n="sw2">Coral<small>Foregrounds · highlights</small></div></div>
-        <div class="swatch"><div class="c" style="background:#C9A15F"></div><div class="n" data-i18n="sw3">Ochre<small>Wood · packaging</small></div></div>
-        <div class="swatch"><div class="c" style="background:#2E2E2E"></div><div class="n" data-i18n="sw4">Charcoal<small>Typography · metals</small></div></div>
+        <div class="swatch"><div class="c" style="background:#1E4D3B"></div><div class="n">سبز عمیق<small>پس‌زمینه · گیاهان · دیوارها</small></div></div>
+        <div class="swatch"><div class="c" style="background:#E07856"></div><div class="n">مرجانی<small>پیش‌زمینه · هایلایت‌ها</small></div></div>
+        <div class="swatch"><div class="c" style="background:#C9A15F"></div><div class="n">اخرایی<small>چوب · بسته‌بندی</small></div></div>
+        <div class="swatch"><div class="c" style="background:#2E2E2E"></div><div class="n">ذغالی<small>تایپوگرافی · فلزات</small></div></div>
       </div>
       <div class="gallery">
         <figure><img src="images/pirana-cards.jpg" alt="Pirana — business cards" loading="lazy"></figure>
@@ -558,24 +545,24 @@ html[dir="rtl"] .marquee-track{animation-direction:reverse}
 
     <!-- 03 miross : dark panel -->
     <article class="project project-dark reveal">
-      <div class="p-top"><span class="p-num">03 — LOGO DESIGN</span><span class="p-year" data-i18n="p3MetaYear"><b>Year</b> 2025</span></div>
-      <h3 class="p-title" data-i18n="p3Title">Miross</h3>
-      <p class="p-desc" data-i18n="p3Desc">Logo design for <b>Miross by Arta</b> — a white gothic "M" monogram crowned with a diamond, set against a dark cinematic close-up. <b>Just the logo</b> — the rest of the brand's main website is not my design.</p>
+      <div class="p-top"><span class="p-num">03 — LOGO DESIGN</span><span class="p-year"><b>سال</b>۲۰۲۵</span></div>
+      <h3 class="p-title">میروس</h3>
+      <p class="p-desc">طراحی لوگو برای <b>Miross by Arta</b> — مونوگرام «M» گوتیک سفید با تاجی از الماس، روی یک نمای نزدیک سینمایی و تیره. <b>فقط لوگو</b> — بقیه‌ی وب‌سایت اصلی این برند طراحی من نیست.</p>
       <div class="p-meta">
-        <div data-i18n="p3MetaScope"><b>Scope</b>Logo design</div>
-        <div data-i18n="p3MetaDeliv"><b>Deliverables</b>Monogram · lockup</div>
+        <div><b>حوزه</b>طراحی لوگو</div>
+        <div><b>خروجی‌ها</b>مونوگرام · لاک‌آپ</div>
       </div>
       <div class="frame"><img src="images/miross.jpg" alt="Miross by Arta — white gothic M monogram with diamond on dark cinematic close-up"></div>
     </article>
 
     <!-- 04 health ministry -->
     <article class="project glass reveal">
-      <div class="p-top"><span class="p-num">04 — IDENTITY SYSTEM</span><span class="p-year" data-i18n="p4MetaYear"><b>Year</b> 2025</span></div>
-      <h3 class="p-title" data-i18n="p4Title">Health Ministry</h3>
-      <p class="p-desc" data-i18n="p4Desc">Identity for the Deputy of Research &amp; Technology — Ministry of Health &amp; Medical Education. A tree of curved lines, engineered from <b>pure geometry</b>. Logo, construction system, packaging tape and stationery.</p>
+      <div class="p-top"><span class="p-num">04 — IDENTITY SYSTEM</span><span class="p-year"><b>سال</b>۲۰۲۵</span></div>
+      <h3 class="p-title">وزارت بهداشت</h3>
+      <p class="p-desc">هویت بصری معاونت تحقیقات و فناوری — وزارت بهداشت، درمان و آموزش پزشکی. درختی از خطوط منحنی، مهندسی‌شده از <b>هندسه‌ی ناب</b>. لوگو، سیستم ساخت، نوار بسته‌بندی و ست اداری.</p>
       <div class="p-meta">
-        <div data-i18n="p4MetaScope"><b>Scope</b>Logo &amp; identity system</div>
-        <div data-i18n="p4MetaDeliv"><b>Deliverables</b>Logo · construction · stationery</div>
+        <div><b>حوزه</b>لوگو و سیستم هویت</div>
+        <div><b>خروجی‌ها</b>لوگو · ساختار · ست اداری</div>
       </div>
       <div class="gallery">
         <figure><img src="images/health-dark.jpg" alt="Health Ministry identity — logo on dark" loading="lazy"></figure>
@@ -591,14 +578,14 @@ html[dir="rtl"] .marquee-track{animation-direction:reverse}
 <section class="mode-design" style="padding-top:0">
   <div class="wrap">
     <div class="why-panel reveal">
-      <span class="label" data-i18n="whyLabel">Why me</span>
-      <h2 data-i18n="whyH2">This is what your brand<br>can achieve with me.</h2>
-      <p data-i18n="whyP">Every project, one standard: precise, polished, delivered on time.</p>
+      <span class="label">چرا من</span>
+      <h2>برند شما با من<br>به اینجا می‌رسد.</h2>
+      <p>در هر پروژه یک استاندارد: دقیق، تمیز، سر وقت.</p>
       <div class="stats">
-        <div class="stat glass-dark"><b data-i18n="statB1">35%</b><span data-i18n="statS1">2000</span></div>
-        <div class="stat glass-dark"><b data-i18n="statB2">48%</b><span data-i18n="statS2">2010</span></div>
-        <div class="stat glass-dark"><b data-i18n="statB3">62%</b><span data-i18n="statS3">2020</span></div>
-        <div class="stat glass-dark"><b data-i18n="statB4">71%</b><span data-i18n="statS4">2025</span></div>
+        <div class="stat glass-dark"><b>۳۵٪</b><span>۲۰۰۰</span></div>
+        <div class="stat glass-dark"><b>۴۸٪</b><span>۲۰۱۰</span></div>
+        <div class="stat glass-dark"><b>۶۲٪</b><span>۲۰۲۰</span></div>
+        <div class="stat glass-dark"><b>۷۱٪</b><span>۲۰۲۵</span></div>
       </div>
     </div>
   </div>
@@ -607,21 +594,21 @@ html[dir="rtl"] .marquee-track{animation-direction:reverse}
 <section class="contact" id="contact">
   <div class="contact-panel">
     <div class="orb orb-1"></div><div class="orb orb-2"></div>
-    <span class="label reveal" data-i18n="contactLabel">Contact</span>
-    <h2 class="reveal" data-i18n="contactH2">Let's work<br>together.</h2>
-    <p class="lead reveal" data-i18n="contactLead">Available for new projects — brand identities, thumbnails, visuals.</p>
+    <span class="label reveal">تماس</span>
+    <h2 class="reveal">بیایید با هم<br>کار کنیم.</h2>
+    <p class="lead reveal">برای پروژه‌های جدید در دسترس‌ام — هویت بصری برند، تامبنیل و تصاویر.</p>
     <p class="reveal fa fa-line" dir="rtl">تماس با من</p>
     <div class="c-actions">
       <a class="btn btn-light reveal" href="tel:+989912566164"><small class="fa" dir="rtl">روی تمام پلتفرم‌ها (حتی واتساپ)</small><span class="big">+98991-256-6164</span></a>
-      <a class="btn btn-light reveal" href="https://instagram.com/iarivn" target="_blank" rel="noopener"><small data-i18n="igSmall">on instagram</small><span class="big">@iarivn</span></a>
+      <a class="btn btn-light reveal" href="https://instagram.com/iarivn" target="_blank" rel="noopener"><small>در اینستاگرام</small><span class="big">@iarivn</span></a>
     </div>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <span data-i18n="footerCopy">© 2026 Arian Babaee</span>
-    <span data-i18n="footerRole">Graphic Designer &amp; Video Editor</span>
+    <span>© ۲۰۲۶ آرین بابایی</span>
+    <span>طراح گرافیک و تدوین‌گر ویدیو</span>
   </div>
 </footer>
 
@@ -630,92 +617,6 @@ const obs=new IntersectionObserver(es=>es.forEach(e=>{
   if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}
 }),{threshold:.1});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
-
-/* ---------- i18n: FA default, EN switch ---------- */
-const FA = {
-navBrand:'آرین بابایی', navWork:'نمونه‌کارها', navAbout:'درباره من', navContact:'تماس', navTalk:'گفت‌وگو کنیم',
-heroLabel:'پورتفولیو — ۲۰۲۶', heroName:'آرین بابایی', heroTag:'طراحی، در کانون توجه.',
-heroSub:'طراح گرافیک و تدوین‌گر ویدیو — هویت بصری برند، تامبنیل و تصاویر را با دقت و وسواس می‌سازم.',
-heroCtaWork:'مشاهده نمونه‌کارها', heroCtaContact:'تماس با من',
-heroMeta1b:'۵+ سال', heroMeta1s:'تجربه', heroMeta2s:'ابزارهای اصلی', heroMeta3b:'در دسترس', heroMeta3s:'برای پروژه‌های جدید',
-aboutLabel:'درباره من', aboutH2:'طراح، تدوین‌گر،<br>حل‌کننده‌ی مسئله‌های بصری.',
-aboutPara:'من <b>آرین بابایی</b> هستم — طراح گرافیک و تدوین‌گر ویدیو با بیش از ۵ سال تجربه. با <b>فتوشاپ، فاینال‌کات و ایلاستریتور</b> کار می‌کنم و عاشق جان‌دادن به ایده‌های بصری با کمک هوش مصنوعی‌ام. طراحی رابط کاربری، ساخت موسیقی و چند حوزه‌ی دیگر را هم تجربه کرده‌ام — و همیشه برای تجربه‌های تازه آماده‌ام.',
-svc1:'هویت بصری برند <i>لوگو و سیستم‌های بصری</i>', svc2:'تامبنیل یوتیوب <i>طراحی پربازدید</i>', svc3:'تدوین ویدیو <i>فاینال‌کات پرو</i>',
-svc4:'طراحی شبکه‌های اجتماعی <i>فید و کمپین</i>', svc5:'بسته‌بندی <i>آماده‌ی چاپ</i>', svc6:'طراحی لوگو <i>نشانه و مونوگرام</i>',
-fact1h:'تجربه', fact1p:'۵+ سال در برندینگ، شبکه‌های اجتماعی و ویدیو',
-fact2h:'ابزارها', fact2p:'فتوشاپ · ایلاستریتور · فاینال‌کات · هوش مصنوعی',
-fact3h:'وضعیت', fact3p:'برای پروژه‌های جدید در دسترس',
-workLabel:'نمونه‌کارهای منتخب', workH2:'پروژه‌ها', workP:'گزیده‌ای از کارهای اخیر در برندینگ، شبکه‌های اجتماعی و طراحی بصری.',
-p1Title:'تامبنیل‌های یوتیوب',
-p1Desc:'مجموعه‌ای از تامبنیل‌های پربازدید برای سازندگان فارسی‌زبان — ترکیب‌بندی‌های جسورانه، سوژه‌های پرحالت و تایپوگرافی‌ای که برای متوقف‌کردن اسکرول ساخته شده است. یک زبان بصری یکدست و پرضرب در کانال‌های <b>فناوری، ورزش، پادکست و سبک زندگی</b>.',
-p1MetaScope:'<b>حوزه</b>طراحی شبکه‌های اجتماعی', p1MetaDeliv:'<b>خروجی‌ها</b>۱۰ تامبنیل', p1MetaYear:'<b>سال</b>۲۰۲۵ – ۲۰۲۶',
-t1:'دوئل تریدرها<small>کانال مالی</small>', t2:'گاراژ جیمنی<small>خودرو</small>', t3:'تحلیل پرسپولیس<small>ورزش</small>',
-t4:'ماجراجویی جنگل<small>سبک زندگی</small>', t5:'بررسی مک مینی M4<small>فناوری</small>', t6:'کلود ۰ تا ۱۰۰<small>فناوری / هوش مصنوعی</small>',
-t7:'پادکست · مارکت ایران<small>پادکست</small>', t8:'گالری خودرو<small>سوپراسپرت‌ها</small>', t9:'ولوگ · ولوگ تولد<small>سبک زندگی</small>',
-t10:'رفع مشکل اپل آیدی<small>فناوری</small>',
-p2Title:'پیرانا فود',
-p2Desc:'هویت بصری کامل برای <b>پیرانا</b> — برند کافه و فست‌فود با روحی مدیترانه‌ای، دریایی و آرت‌دکو. کاراکتر برند: یک فلامینگو. نشانه: دو طاق مرجانی با لوگوتایپ فارسی. یک سیستم کامل — <b>پالت رنگی، ست آیکون، بسته‌بندی و چاپ</b> — با زبان مینیمال آرت‌دکو که از کارت ویزیت تا جعبه‌های بیرون‌بر ادامه دارد.',
-p2MetaScope:'<b>حوزه</b>هویت بصری برند', p2MetaDeliv:'<b>خروجی‌ها</b>لوگو · آیکون · بسته‌بندی · چاپ', p2MetaYear:'<b>سال</b>۲۰۲۵',
-sw1:'سبز عمیق<small>پس‌زمینه · گیاهان · دیوارها</small>', sw2:'مرجانی<small>پیش‌زمینه · هایلایت‌ها</small>',
-sw3:'اخرایی<small>چوب · بسته‌بندی</small>', sw4:'ذغالی<small>تایپوگرافی · فلزات</small>',
-p3Title:'میروس',
-p3Desc:'طراحی لوگو برای <b>Miross by Arta</b> — مونوگرام «M» گوتیک سفید با تاجی از الماس، روی یک نمای نزدیک سینمایی و تیره. <b>فقط لوگو</b> — بقیه‌ی وب‌سایت اصلی این برند طراحی من نیست.',
-p3MetaScope:'<b>حوزه</b>طراحی لوگو', p3MetaDeliv:'<b>خروجی‌ها</b>مونوگرام · لاک‌آپ', p3MetaYear:'<b>سال</b>۲۰۲۵',
-p4Title:'وزارت بهداشت',
-p4Desc:'هویت بصری معاونت تحقیقات و فناوری — وزارت بهداشت، درمان و آموزش پزشکی. درختی از خطوط منحنی، مهندسی‌شده از <b>هندسه‌ی ناب</b>. لوگو، سیستم ساخت، نوار بسته‌بندی و ست اداری.',
-p4MetaScope:'<b>حوزه</b>لوگو و سیستم هویت', p4MetaDeliv:'<b>خروجی‌ها</b>لوگو · ساختار · ست اداری', p4MetaYear:'<b>سال</b>۲۰۲۵',
-whyLabel:'چرا من', whyH2:'برند شما با من<br>به اینجا می‌رسد.', whyP:'در هر پروژه یک استاندارد: دقیق، تمیز، سر وقت.',
-statB1:'۳۵٪', statS1:'۲۰۰۰', statB2:'۴۸٪', statS2:'۲۰۱۰', statB3:'۶۲٪', statS3:'۲۰۲۰', statB4:'۷۱٪', statS4:'۲۰۲۵',
-contactLabel:'تماس', contactH2:'بیایید با هم<br>کار کنیم.', contactLead:'برای پروژه‌های جدید در دسترس‌ام — هویت بصری برند، تامبنیل و تصاویر.',
-igSmall:'در اینستاگرام',
-footerCopy:'© ۲۰۲۶ آرین بابایی', footerRole:'طراح گرافیک و تدوین‌گر ویدیو',
-navCreative:'خلاقیت',
-creativeLabel:'مدیریت خلاقیت', creativeH2:'خلاقیت، از ایده<br>تا اجرا.',
-creativeP:'به‌عنوان مدیر خلاقیت، برند را از جرقه‌ی یک ایده تا کمپینی که در ذهن می‌ماند همراهی می‌کنم — کانسپت، تصویر، محتوا و تیمی که آن را می‌سازد.',
-cr1t:'ایده‌پردازی و کانسپت', cr1d:'از جرقه‌ی اول تا کانسپت کامل کمپین — ایده‌ی بزرگ، داستان و زاویه‌ی دید.',
-cr2t:'کمپین‌های تبلیغاتی', cr2d:'کمپین‌های فصلی و لانچ، از برنامه‌ریزی تا اجرا — تصویر، متن و زمان‌بندی انتشار.',
-cr3t:'هویت بصری و داستان برند', cr3d:'هویت‌هایی با داستانی پشت‌شان — تا برند دیده شود و در ذهن بماند.',
-cr4t:'تولید محتوا و تبلیغات خلاقانه', cr4d:'محتوای شبکه‌های اجتماعی و تبلیغاتی که اسکرول را متوقف می‌کند — طراحی‌شده و هدفمند.',
-viewAs:'مشاهده به‌عنوان:', modeDesign:'گرافیک دیزاین', modeCreative:'مدیر خلاقیت', modeDesignShort:'دیزاین', modeCreativeShort:'خلاقیت',
-navResume:'رزومه', navIdeas:'ایده‌پردازی',
-heroCLabel:'مدیر خلاقیت — ۲۰۲۶', heroCName:'آرین بابایی', heroCTag:'خلاقیت، در کانون توجه.',
-heroCSub:'مدیر خلاقیت برندهای عطر آیریس و دیجی نکست — از جرقه‌ی ایده تا کمپینی که دیده می‌شود.',
-heroCCta1:'مشاهده رزومه', heroCCta2:'تماس با من',
-heroCM1b:'۳ سال', heroCM1s:'مدیر خلاقیت — عطر آیریس', heroCM2b:'۱٫۵ سال', heroCM2s:'مدیر خلاقیت — دیجی نکست', heroCM3b:'در دسترس', heroCM3s:'برای پروژه‌های جدید',
-resumeLabel:'رزومه کاری', resumeH2:'مدیر خلاقیت<br>دو برند.', resumeP:'رزومه‌ی کوتاه کاری من به‌عنوان مدیر خلاقیت — دو برند، دو تجربه، یک کار: ایده.',
-role1t:'عطر آیریس', role1meta:'مدیر خلاقیت · ۳ سال', role1d:'مدیریت خلاقیت برند عطر دست‌ساز ایرانی — ایده‌پردازی تبلیغات، کمپین‌ها، تخفیف‌ها و محتوای برند.', role1y:'۳ سال', role1ys:'به‌عنوان مدیر خلاقیت',
-role2t:'دیجی نکست', role2meta:'مدیر خلاقیت · ۱٫۵ سال', role2d:'مدیریت خلاقیت برند دیجی نکست — ایده‌پردازی کمپین‌ها، برنامه‌ها و محتوای برند.', role2y:'۱٫۵ سال', role2ys:'به‌عنوان مدیر خلاقیت',
-roleH:'مدیر خلاقیت چه کار می‌کند؟', roleP:'مدیر خلاقیت کسی است که ایده‌ی اصلی برند را پیدا می‌کند و آن را به تبلیغ، کمپین، تخفیف، برنامه و محتوا تبدیل می‌کند. من از جرقه‌ی اول ایده تا اجرا و دیده‌شدن آن کنار برند می‌ایستم — <b>ایده‌پردازی برای تبلیغات، کمپین‌ها، تخفیف‌ها، برنامه‌ها، محتواها و خیلی چیزهای دیگر.</b>',
-ideasLabel:'ایده‌پردازی', ideasH2:'ایده، برای همه‌چیز.', ideasP:'هر بخش برند یک ایده می‌خواهد — و ایده‌پردازی، کار اصلی من است.',
-id1t:'تبلیغات', id1d:'ایده‌هایی که تبلیغ را دیده‌شدن می‌کنند، نه فقط نمایش.',
-id2t:'کمپین‌ها', id2d:'کمپین‌هایی از ایده تا اجرا، با یک داستان واحد.',
-id3t:'تخفیف‌ها', id3d:'پیشنهادهایی که سبد خرید مشتری را بزرگ‌تر می‌کنند.',
-id4t:'برنامه‌ها', id4d:'برنامه‌ها و رویدادهایی که برند را زنده نگه می‌دارند.',
-id5t:'محتواها', id5d:'محتوایی که مخاطب را نگه می‌دارد و برمی‌گرداند.',
-id6t:'و خیلی بیشتر', id6d:'هر جا برند به ایده‌ای تازه نیاز دارد.'
-};
-const FA_TITLE = 'آرین بابایی — طراح گرافیک و تدوین‌گر ویدیو';
-const FA_DESC = 'پورتفولیوی آرین بابایی — هویت بصری برند، تامبنیل یوتیوب، طراحی لوگو و تدوین ویدیو.';
-const EN_TITLE = 'Arian Babaee — Graphic Designer & Video Editor';
-const EN_DESC = 'Portfolio of Arian Babaee — brand identity, YouTube thumbnails, logo design, video editing.';
-const i18nEls = [...document.querySelectorAll('[data-i18n]')];
-const enCache = new Map(i18nEls.map(el => [el, el.innerHTML]));
-function setLang(l){
-  const fa = l === 'fa';
-  document.documentElement.lang = fa ? 'fa' : 'en';
-  document.documentElement.dir = fa ? 'rtl' : 'ltr';
-  i18nEls.forEach(el => { const k = el.dataset.i18n; el.innerHTML = fa ? (FA[k] ?? enCache.get(el)) : enCache.get(el); });
-  document.title = fa ? FA_TITLE : EN_TITLE;
-  document.querySelector('meta[name="description"]').content = fa ? FA_DESC : EN_DESC;
-  document.querySelectorAll('.ls-opt').forEach(o => o.classList.toggle('on', o.dataset.l === l));
-  try { localStorage.setItem('portfolio-lang', l); } catch(e){}
-}
-document.getElementById('langSwitch').addEventListener('click', e => {
-  const t = e.target.closest('.ls-opt');
-  const cur = document.documentElement.lang === 'fa' ? 'fa' : 'en';
-  setLang(t ? t.dataset.l : (cur === 'fa' ? 'en' : 'fa'));
-});
-try { const s = localStorage.getItem('portfolio-lang'); setLang(s === 'en' ? 'en' : 'fa'); } catch(e){ setLang('fa'); }
 
 /* ---------- mode: design / creative director ---------- */
 const MODE_KEY = 'portfolio-mode';
