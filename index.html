@@ -116,15 +116,7 @@ section{padding:104px 0}
 .sec-head h2{font-size:clamp(2.1rem,4.8vw,3.2rem);margin:18px 0 14px}
 .sec-head p{color:var(--muted);font-size:1.02rem}
 
-/* ---------- about bento ---------- */
-.about-grid{display:grid;grid-template-columns:340px 1fr;gap:20px;align-items:stretch}
-@media(max-width:860px){.about-grid{grid-template-columns:1fr}}
-.portrait{border-radius:28px;min-height:460px;position:relative;overflow:hidden;
-  background:linear-gradient(155deg,#123350,#071627 70%)}
-.portrait::after{content:'';position:absolute;inset:0;
-  background:radial-gradient(300px 220px at 80% 10%,rgba(127,178,217,.5),transparent 65%)}
-.portrait .ab{position:absolute;left:28px;bottom:22px;font-size:5rem;font-weight:700;letter-spacing:-.05em;color:rgba(250,247,240,.9);z-index:2}
-.portrait .tag{position:absolute;top:22px;left:22px;z-index:2;padding:9px 15px;border-radius:999px;font-size:.78rem;font-weight:600;color:var(--ice)}
+/* ---------- about ---------- */
 .about-main{border-radius:28px;padding:40px 40px 36px}
 .about-main p.lead{font-size:1.1rem;max-width:38rem}
 .about-main p.lead b{color:var(--carbon)}
@@ -293,7 +285,6 @@ html[data-mode="creative"] .why-panel{background:radial-gradient(800px 420px at 
   linear-gradient(160deg,#3D0A13,#2A070D 70%)}
 html[data-mode="creative"] .contact-panel{background:radial-gradient(900px 460px at 50% 0%,#7A0E1E 0%,transparent 60%),
   linear-gradient(170deg,#3D0A13,#160309 80%)}
-html[data-mode="creative"] .portrait{background:linear-gradient(155deg,#57101D,#2A070D 70%)}
 html[data-mode="creative"] .project-dark{background:linear-gradient(160deg,#4A0C16,#2A070D 75%)}
 html[data-mode="creative"] .btn{background:linear-gradient(135deg,rgba(61,10,19,.85),rgba(42,7,13,.92))}
 html[data-mode="creative"] ::selection{background:var(--carbon4);color:var(--cream)}
@@ -403,8 +394,6 @@ html[dir="rtl"] .marquee-track{animation-direction:reverse}
       <span class="label">درباره من</span>
       <h2>طراح، تدوین‌گر،<br>حل‌کننده‌ی مسئله‌های بصری.</h2>
     </div>
-    <div class="about-grid">
-      <div class="portrait reveal"><span class="tag glass-dark">Arian Babaee — 2026</span><span class="ab">AB</span></div>
       <div class="about-main glass reveal">
         <p class="lead">من <b>آرین بابایی</b> هستم — طراح گرافیک و تدوین‌گر ویدیو با بیش از ۵ سال تجربه. با <b>فتوشاپ، فاینال‌کات و ایلاستریتور</b> کار می‌کنم و عاشق جان‌دادن به ایده‌های بصری با کمک هوش مصنوعی‌ام. طراحی رابط کاربری، ساخت موسیقی و چند حوزه‌ی دیگر را هم تجربه کرده‌ام — و همیشه برای تجربه‌های تازه آماده‌ام.</p>
         <ul class="svc">
@@ -421,7 +410,6 @@ html[dir="rtl"] .marquee-track{animation-direction:reverse}
           <div class="fact"><h4>وضعیت</h4><p>برای پروژه‌های جدید در دسترس</p></div>
         </div>
       </div>
-    </div>
   </div>
 </section>
 
