@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Arian Babaee — Graphic Designer &amp; Video Editor</title>
-<meta name="description" content="Portfolio of Arian Babaee — brand identity, YouTube thumbnails, logo design, video editing.">
+<title>آرین بابایی — طراح گرافیک و تدوین‌گر ویدیو</title>
+<meta name="description" content="پورتفولیوی آرین بابایی — هویت بصری برند، تامبنیل یوتیوب، طراحی لوگو و تدوین ویدیو.">
 <style>
 @font-face{font-family:'AbarHigh';src:url('fonts/AbarHigh-Regular.woff') format('woff');font-weight:400;font-display:swap}
 @font-face{font-family:'AbarHigh';src:url('fonts/AbarHigh-Bold.woff') format('woff');font-weight:700;font-display:swap}
@@ -207,6 +207,14 @@ section{padding:104px 0}
 .stat b{font-size:clamp(2.2rem,5vw,3.2rem);font-weight:700;letter-spacing:-.04em;display:block;color:#FAF7F0}
 .stat span{font-size:.85rem;color:var(--on-dark-muted)}
 
+/* ---------- creative direction ---------- */
+.creative-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:44px}
+@media(max-width:640px){.creative-grid{grid-template-columns:1fr}}
+.cr-card{padding:28px 26px;border-radius:22px}
+.cr-num{font-size:.78rem;font-weight:700;letter-spacing:.24em;color:var(--steel)}
+.cr-card h3{color:#FAF7F0;font-size:1.25rem;margin:12px 0 8px;letter-spacing:-.02em}
+.cr-card p{font-size:.92rem;color:var(--on-dark-muted)}
+
 /* ---------- contact ---------- */
 .contact{padding:0 14px 14px}
 .contact-panel{border-radius:36px;padding:110px 40px 96px;text-align:center;position:relative;overflow:hidden;
@@ -271,10 +279,11 @@ html[dir="rtl"] .marquee-track{animation-direction:reverse}
     <div class="links">
       <a class="nl" href="#work" data-i18n="navWork">Work</a>
       <a class="nl" href="#about" data-i18n="navAbout">About</a>
+      <a class="nl" href="#creative" data-i18n="navCreative">Creative</a>
       <a class="nl" href="#contact" data-i18n="navContact">Contact</a>
     </div>
     <div class="nav-right">
-      <button class="lang-switch" id="langSwitch" type="button" aria-label="Language / زبان"><span class="ls-opt on" data-l="en">EN</span><span class="ls-opt ls-fa" data-l="fa">فا</span></button>
+      <button class="lang-switch" id="langSwitch" type="button" aria-label="Language / زبان"><span class="ls-opt" data-l="en">EN</span><span class="ls-opt ls-fa on" data-l="fa">فا</span></button>
       <a class="btn btn-sm" href="#contact" data-i18n="navTalk">Let's talk</a>
     </div>
   </div>
@@ -331,6 +340,22 @@ html[dir="rtl"] .marquee-track{animation-direction:reverse}
           <div class="fact"><h4 data-i18n="fact2h">Tools</h4><p data-i18n="fact2p">Photoshop · Illustrator · Final Cut · AI</p></div>
           <div class="fact"><h4 data-i18n="fact3h">Status</h4><p data-i18n="fact3p">Available for new projects</p></div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="creative" style="padding-top:0">
+  <div class="wrap">
+    <div class="why-panel reveal">
+      <span class="label" data-i18n="creativeLabel">Creative Direction</span>
+      <h2 data-i18n="creativeH2">Creativity, led<br>from idea to launch.</h2>
+      <p data-i18n="creativeP">As Creative Director, I take a brand from a spark of an idea to a campaign people remember — concept, visuals, content and the team behind them.</p>
+      <div class="creative-grid">
+        <div class="cr-card glass-dark"><span class="cr-num">01</span><h3 data-i18n="cr1t">Ideation &amp; Concept</h3><p data-i18n="cr1d">From a first spark to a full campaign concept — the big idea, the story, the angle.</p></div>
+        <div class="cr-card glass-dark"><span class="cr-num">02</span><h3 data-i18n="cr2t">Campaigns</h3><p data-i18n="cr2d">Seasonal and launch campaigns planned end to end — visuals, copy and rollout.</p></div>
+        <div class="cr-card glass-dark"><span class="cr-num">03</span><h3 data-i18n="cr3t">Brand Identity &amp; Story</h3><p data-i18n="cr3d">Identities with a story behind them — so a brand is recognised, not just seen.</p></div>
+        <div class="cr-card glass-dark"><span class="cr-num">04</span><h3 data-i18n="cr4t">Content &amp; Creative Ads</h3><p data-i18n="cr4d">Social content and ads that stop the scroll — designed, written and directed to convert.</p></div>
       </div>
     </div>
   </div>
@@ -467,7 +492,7 @@ const obs=new IntersectionObserver(es=>es.forEach(e=>{
 }),{threshold:.1});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 
-/* ---------- i18n: EN default, FA switch ---------- */
+/* ---------- i18n: FA default, EN switch ---------- */
 const FA = {
 navBrand:'آرین بابایی', navWork:'نمونه‌کارها', navAbout:'درباره من', navContact:'تماس', navTalk:'گفت‌وگو کنیم',
 heroLabel:'پورتفولیو — ۲۰۲۶', heroName:'آرین بابایی', heroTag:'طراحی، در کانون توجه.',
@@ -504,12 +529,19 @@ whyLabel:'چرا من', whyH2:'برند شما با من<br>به اینجا می
 statB1:'۳۵٪', statS1:'۲۰۰۰', statB2:'۴۸٪', statS2:'۲۰۱۰', statB3:'۶۲٪', statS3:'۲۰۲۰', statB4:'۷۱٪', statS4:'۲۰۲۵',
 contactLabel:'تماس', contactH2:'بیایید با هم<br>کار کنیم.', contactLead:'برای پروژه‌های جدید در دسترس‌ام — هویت بصری برند، تامبنیل و تصاویر.',
 igSmall:'در اینستاگرام',
-footerCopy:'© ۲۰۲۶ آرین بابایی', footerRole:'طراح گرافیک و تدوین‌گر ویدیو'
+footerCopy:'© ۲۰۲۶ آرین بابایی', footerRole:'طراح گرافیک و تدوین‌گر ویدیو',
+navCreative:'خلاقیت',
+creativeLabel:'مدیریت خلاقیت', creativeH2:'خلاقیت، از ایده<br>تا اجرا.',
+creativeP:'به‌عنوان مدیر خلاقیت، برند را از جرقه‌ی یک ایده تا کمپینی که در ذهن می‌ماند همراهی می‌کنم — کانسپت، تصویر، محتوا و تیمی که آن را می‌سازد.',
+cr1t:'ایده‌پردازی و کانسپت', cr1d:'از جرقه‌ی اول تا کانسپت کامل کمپین — ایده‌ی بزرگ، داستان و زاویه‌ی دید.',
+cr2t:'کمپین‌های تبلیغاتی', cr2d:'کمپین‌های فصلی و لانچ، از برنامه‌ریزی تا اجرا — تصویر، متن و زمان‌بندی انتشار.',
+cr3t:'هویت بصری و داستان برند', cr3d:'هویت‌هایی با داستانی پشت‌شان — تا برند دیده شود و در ذهن بماند.',
+cr4t:'تولید محتوا و تبلیغات خلاقانه', cr4d:'محتوای شبکه‌های اجتماعی و تبلیغاتی که اسکرول را متوقف می‌کند — طراحی‌شده و هدفمند.'
 };
 const FA_TITLE = 'آرین بابایی — طراح گرافیک و تدوین‌گر ویدیو';
 const FA_DESC = 'پورتفولیوی آرین بابایی — هویت بصری برند، تامبنیل یوتیوب، طراحی لوگو و تدوین ویدیو.';
-const EN_TITLE = document.title;
-const EN_DESC = document.querySelector('meta[name="description"]').content;
+const EN_TITLE = 'Arian Babaee — Graphic Designer & Video Editor';
+const EN_DESC = 'Portfolio of Arian Babaee — brand identity, YouTube thumbnails, logo design, video editing.';
 const i18nEls = [...document.querySelectorAll('[data-i18n]')];
 const enCache = new Map(i18nEls.map(el => [el, el.innerHTML]));
 function setLang(l){
@@ -527,7 +559,7 @@ document.getElementById('langSwitch').addEventListener('click', e => {
   const cur = document.documentElement.lang === 'fa' ? 'fa' : 'en';
   setLang(t ? t.dataset.l : (cur === 'fa' ? 'en' : 'fa'));
 });
-try { if (localStorage.getItem('portfolio-lang') === 'fa') setLang('fa'); } catch(e){}
+try { const s = localStorage.getItem('portfolio-lang'); setLang(s === 'en' ? 'en' : 'fa'); } catch(e){ setLang('fa'); }
 </script>
 </body>
 </html>
